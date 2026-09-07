@@ -5,7 +5,7 @@
   "dependencies": [
     {
       "package": "kumwe/business-definition",
-      "constraint": "dev-main",
+      "constraint": "0.1.0",
       "independently_verified": false,
       "attestation": null
     },

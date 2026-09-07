@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Use published Business Definition 0.1.0 so the package composes with other stable definition consumers.
+
 ### Added
 
 - Bounded report and projection definitions with neutral projection contracts.
