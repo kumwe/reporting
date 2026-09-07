@@ -2,10 +2,14 @@
 
 Bounded report and projection definitions with neutral projection contracts.
 
-Canonical namespace: `Kumwe\Reporting`. Requires PHP 8.5, 64-bit. This is a development extraction candidate; do not publish or adopt until the migration handoff and exact upstream release attestations are reviewed.
+Canonical namespace: `Kumwe\Reporting`. Requires PHP 8.5, 64-bit. Version 0.1.0 has been published; this branch prepares the 0.1.1 maintenance release. App integration follows independent verification of the final release and its handoff.
 
 Pure values and stateless normalization are constructed directly. No empty container provider is registered. Services with real collaborators receive explicit factories when introduced.
 
 See [public API](docs/public-api.md), [architecture](docs/architecture.md), [integration](docs/integration.md) and [test ownership](docs/test-ownership.md).
 
-For candidate source verification, follow `docs/integration.md`. Run `composer check` after installing the explicit candidate toolchain. `composer clean-consumer` verifies the archive in a fresh no-dev classmap-authoritative consumer. License: Apache-2.0.
+For standalone verification, run `composer install` and `composer check`; see `docs/integration.md`. `composer clean-consumer` verifies the archive in a fresh no-dev classmap-authoritative consumer. License: Apache-2.0.
+
+Maintenance release: Detach report and projection collections and default parameters from caller references so validated output fields and checksums remain immutable. Resolve published dependency releases from Packagist without obsolete root VCS overrides.
+
+Direct Kumwe dependencies use exact stable versions. Dependabot proposes grouped weekly Composer updates; review and merge only after the complete package gate passes. The downstream App consumes a verified exact release, never an unreviewed moving `latest` constraint.

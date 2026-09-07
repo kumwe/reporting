@@ -1,16 +1,16 @@
 {
-  "schema": "kumwe-capabilities/v1",
-  "package": "kumwe/reporting",
-  "capabilities": [
-    {
-      "id": "reporting.portable-semantics",
-      "responsibility": "Bounded report and projection definitions with neutral projection contracts.",
-      "implementation_owner": "kumwe/reporting",
-      "documentation": [
-        "docs/public-api.md",
-        "docs/architecture.md"
-      ]
-    }
-  ],
-  "release_verified": false
+    "schema": "kumwe-capabilities/v1",
+    "package": "kumwe/reporting",
+    "capabilities": [
+        {
+            "id": "reporting.portable-semantics",
+            "responsibility": "Bounded report and projection definitions with neutral projection contracts.",
+            "implementation_owner": "kumwe/reporting",
+            "documentation": [
+                "docs/public-api.md",
+                "docs/architecture.md"
+            ]
+        }
+    ],
+    "release_verified": false
 }

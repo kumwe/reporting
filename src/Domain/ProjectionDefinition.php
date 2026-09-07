@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Kumwe\Reporting\Domain;
 
+use Kumwe\Reporting\Internal\ValueSnapshot;
 use InvalidArgumentException;
 use Kumwe\BusinessDefinition\Domain\CanonicalDefinitionJson;
 use Kumwe\Integration\EventSensitivity;
@@ -96,9 +97,9 @@ final readonly class ProjectionDefinition implements IntegrationContract
         if (!array_is_list($keyFields) || count(array_unique($keyFields)) !== count($keyFields)) {
             throw new InvalidArgumentException('Projection key fields must be a unique list.');
         }
-        $this->sources = array_values($sources);
-        $this->fields = array_values($fields);
-        $this->keyFields = $keyFields;
+        $this->sources = ValueSnapshot::copy(array_values($sources));
+        $this->fields = ValueSnapshot::copy(array_values($fields));
+        $this->keyFields = ValueSnapshot::copy($keyFields);
     }
 
     /**

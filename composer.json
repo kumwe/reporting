@@ -64,7 +64,8 @@
     ]
   },
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "github-protocols": ["https"]
   },
   "archive": {
     "exclude": [
@@ -86,24 +87,12 @@
       "/composer.candidate.lock"
     ]
   },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
   "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/integration.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/automation.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/canonical-json.git"
-    },
     {
       "type": "vcs",
       "url": "https://github.com/kumwe/access-control.git"
     }
-  ],
-  "minimum-stability": "stable",
-  "prefer-stable": true
+  ]
 }

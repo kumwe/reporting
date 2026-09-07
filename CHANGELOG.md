@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1 - 2026-09-07
+
+- Detach report and projection collections and default parameters from caller references so validated output fields and checksums remain immutable. Resolve published dependency releases from Packagist without obsolete root VCS overrides.
+- Add package-owned regression tests and refresh extraction handoff, dependency and release documentation.
+- Keep exact stable dependency requirements; grouped weekly update PRs re-run the package gate.
+
 ## 0.1.0 - 2026-09-07
 
 - Use published Business Definition 0.1.0, Access Control 0.1.0 and Integration 0.1.0 with stable Composer resolution.

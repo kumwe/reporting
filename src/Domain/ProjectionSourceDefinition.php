@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Kumwe\Reporting\Domain;
 
+use Kumwe\Reporting\Internal\ValueSnapshot;
 use InvalidArgumentException;
 
 /**
@@ -47,6 +48,6 @@ final readonly class ProjectionSourceDefinition
         if ($schemaVersions !== $canonical) {
             throw new InvalidArgumentException('Projection source schema versions must be sorted.');
         }
-        $this->schemaVersions = $versions;
+        $this->schemaVersions = ValueSnapshot::copy($versions);
     }
 }
