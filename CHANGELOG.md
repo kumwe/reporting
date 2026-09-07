@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Use published Business Definition 0.1.0 so the package composes with other stable definition consumers.
+- Use published Business Definition 0.1.0 and Access Control 0.1.0 in the source candidate graph.
 
 ### Added
 
