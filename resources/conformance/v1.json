@@ -1,0 +1,14 @@
+{
+  "schema": "kumwe-conformance-index/v1",
+  "package": "kumwe/reporting",
+  "corpora": [
+    {
+      "path": "resources/conformance/report-materialization-v1.json",
+      "sha256": "975116dc897a0bfdee4a08f9065eb10ccfec06a32f4eb93a48015b08af408c01",
+      "fixtures": 116,
+      "schema": "kumwe-report-materialization-corpus/v1",
+      "source_app": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+      "native_counterpart": "kumwe/engine:corpus/reporting/materialization-v1.json"
+    }
+  ]
+}

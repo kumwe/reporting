@@ -162,12 +162,25 @@ final class ReportingBoundaryTest extends TestCase
     }
     public function testFrozenNativePlansPreserveEveryCanonicalField(): void
     {
-        $corpus = json_decode(
-            file_get_contents(dirname(__DIR__) . '/resources/conformance/report-materialization-v1.json'),
+        $index = json_decode(
+            file_get_contents(dirname(__DIR__) . '/resources/conformance/v1.json'),
             true,
             512,
             JSON_THROW_ON_ERROR
         );
+        self::assertCount(1, $index['corpora']);
+        $entry = $index['corpora'][0];
+        $bytes = file_get_contents(dirname(__DIR__) . '/' . $entry['path']);
+        self::assertSame($entry['sha256'], hash('sha256', $bytes));
+        $corpus = json_decode(
+            $bytes,
+            true,
+            512,
+            JSON_THROW_ON_ERROR
+        );
+        self::assertCount($entry['fixtures'], $corpus['fixtures']);
+        self::assertSame($entry['schema'], $corpus['schema']);
+        self::assertSame($entry['source_app'], $corpus['source_app']);
         foreach ($corpus['fixtures'] as $fixture) {
             $report = ReportDefinition::fromArray($fixture['plan']);
             self::assertSame($fixture['plan'], $report->toArray(), $fixture['id']);
