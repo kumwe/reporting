@@ -373,13 +373,13 @@
             ],
             "properties": [
                 {
-                    "name": "eventType",
-                    "type": "string",
+                    "name": "schemaVersions",
+                    "type": "array",
                     "readonly": true
                 },
                 {
-                    "name": "schemaVersions",
-                    "type": "array",
+                    "name": "eventType",
+                    "type": "string",
                     "readonly": true
                 }
             ],
