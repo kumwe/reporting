@@ -84,7 +84,7 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       },
       {
         "package": "kumwe/access-control",
-        "constraint": "0.1.0",
+        "constraint": "dev-agent/access-membership-di-completion",
         "independently_verified": false,
         "attestation": null
       }
