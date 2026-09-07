@@ -1,15 +1,22 @@
 {
-    "schema": "kumwe-public-api/v1",
+    "schema": "kumwe-package-public-api/v1",
     "package": "kumwe/reporting",
-    "release": null,
+    "release": "0.1.1",
     "namespace": "Kumwe\\Reporting\\",
-    "symbols": [
-        {
-            "name": "Kumwe\\Reporting\\Contract\\ProjectionBuilder",
+    "symbols": {
+        "Kumwe\\Reporting\\Contract\\ProjectionBuilder": {
+            "stability": "stable",
+            "file": "src/Contract/ProjectionBuilder.php",
+            "abstract": true,
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "interface",
-            "methods": [
-                {
-                    "name": "apply",
+            "methods": {
+                "apply": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -17,85 +24,99 @@
                             "type": "Kumwe\\Reporting\\Domain\\ProjectionDefinition",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "event",
                             "type": "Kumwe\\Reporting\\Contract\\ProjectionEvent",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "writer",
                             "type": "Kumwe\\Reporting\\Contract\\ProjectionWriter",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "void"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Contract\\ProjectionEvent",
+        "Kumwe\\Reporting\\Contract\\ProjectionEvent": {
+            "stability": "stable",
+            "file": "src/Contract/ProjectionEvent.php",
+            "abstract": true,
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "interface",
-            "methods": [
-                {
-                    "name": "sequence",
+            "methods": {
+                "sequence": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "id",
+                "id": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                {
-                    "name": "type",
+                "type": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                {
-                    "name": "schemaVersion",
+                "schemaVersion": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "int"
                 },
-                {
-                    "name": "occurredAt",
+                "occurredAt": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "DateTimeImmutable"
                 },
-                {
-                    "name": "payload",
+                "payload": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "checksum",
+                "checksum": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Contract\\ProjectionWriter",
+        "Kumwe\\Reporting\\Contract\\ProjectionWriter": {
+            "stability": "stable",
+            "file": "src/Contract/ProjectionWriter.php",
+            "abstract": true,
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "interface",
-            "methods": [
-                {
-                    "name": "put",
+            "methods": {
+                "put": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -103,20 +124,20 @@
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "values",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "void"
                 },
-                {
-                    "name": "remove",
+                "remove": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -124,21 +145,31 @@
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "void"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ProjectionDefinition",
+        "Kumwe\\Reporting\\Domain\\ProjectionDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ProjectionDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Integration\\IntegrationContract",
+                "Kumwe\\Contribution\\ContributionDefinition"
+            ],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -146,68 +177,68 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "version",
                             "type": "int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "handlerVersion",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "sensitivityCeiling",
                             "type": "Kumwe\\Integration\\EventSensitivity",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "sources",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "fields",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "keyFields",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "rebuildBatchSize",
                             "type": "int",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "identifier",
+                "identifier": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                {
-                    "name": "accepts",
+                "accepts": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -215,26 +246,26 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "schemaVersion",
                             "type": "int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "bool"
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "fromArray",
+                "fromArray": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -242,63 +273,70 @@
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "Kumwe\\Reporting\\Domain\\ProjectionDefinition"
                 },
-                {
-                    "name": "checksum",
+                "checksum": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "sources",
+            },
+            "properties": {
+                "sources": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "fields",
+                "fields": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "keyFields",
+                "keyFields": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "version",
+                "version": {
+                    "static": false,
                     "type": "int",
                     "readonly": true
                 },
-                {
-                    "name": "handlerVersion",
+                "handlerVersion": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "sensitivityCeiling",
+                "sensitivityCeiling": {
+                    "static": false,
                     "type": "Kumwe\\Integration\\EventSensitivity",
                     "readonly": true
                 },
-                {
-                    "name": "rebuildBatchSize",
+                "rebuildBatchSize": {
+                    "static": false,
                     "type": "int",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ProjectionFieldDefinition",
+        "Kumwe\\Reporting\\Domain\\ProjectionFieldDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ProjectionFieldDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -306,51 +344,58 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "type",
                             "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "nullable",
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "type",
+                "type": {
+                    "static": false,
                     "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
                     "readonly": true
                 },
-                {
-                    "name": "nullable",
+                "nullable": {
+                    "static": false,
                     "type": "bool",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ProjectionSourceDefinition",
+        "Kumwe\\Reporting\\Domain\\ProjectionSourceDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ProjectionSourceDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -358,39 +403,46 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "schemaVersions",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 }
-            ],
-            "properties": [
-                {
-                    "name": "schemaVersions",
+            },
+            "properties": {
+                "schemaVersions": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "eventType",
+                "eventType": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportAggregateDefinition",
+        "Kumwe\\Reporting\\Domain\\ReportAggregateDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ReportAggregateDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -398,57 +450,67 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "function",
                             "type": "Kumwe\\Reporting\\Domain\\ReportAggregateFunction",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "columnAlias",
                             "type": "?string",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 }
-            ],
-            "properties": [
-                {
-                    "name": "alias",
+            },
+            "properties": {
+                "alias": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "function",
+                "function": {
+                    "static": false,
                     "type": "Kumwe\\Reporting\\Domain\\ReportAggregateFunction",
                     "readonly": true
                 },
-                {
-                    "name": "columnAlias",
+                "columnAlias": {
+                    "static": false,
                     "type": "?string",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportAggregateFunction",
+        "Kumwe\\Reporting\\Domain\\ReportAggregateFunction": {
+            "stability": "stable",
+            "file": "src/Domain/ReportAggregateFunction.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "deprecated": null,
             "kind": "enum",
-            "methods": [
-                {
-                    "name": "cases",
+            "methods": {
+                "cases": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "from",
+                "from": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -456,13 +518,13 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "static"
                 },
-                {
-                    "name": "tryFrom",
+                "tryFrom": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -470,38 +532,55 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "Count",
-                "Sum",
-                "Minimum",
-                "Maximum",
-                "Average"
-            ]
+            },
+            "constants": {
+                "Count": {
+                    "type": null
+                },
+                "Sum": {
+                    "type": null
+                },
+                "Minimum": {
+                    "type": null
+                },
+                "Maximum": {
+                    "type": null
+                },
+                "Average": {
+                    "type": null
+                }
+            }
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportColumnDefinition",
+        "Kumwe\\Reporting\\Domain\\ReportColumnDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ReportColumnDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -509,63 +588,72 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "label",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "sourcePath",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "type",
                             "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 }
-            ],
-            "properties": [
-                {
-                    "name": "alias",
+            },
+            "properties": {
+                "alias": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "label",
+                "label": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "sourcePath",
+                "sourcePath": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "type",
+                "type": {
+                    "static": false,
                     "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportDefinition",
+        "Kumwe\\Reporting\\Domain\\ReportDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ReportDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Contribution\\ContributionDefinition"
+            ],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -573,130 +661,130 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "version",
                             "type": "int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "title",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "sourceDefinition",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "requiredCapability",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "parameters",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "filters",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "columns",
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "groups",
                             "type": "array",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "aggregates",
                             "type": "array",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "formulas",
                             "type": "array",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "sorts",
                             "type": "array",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "drillDowns",
                             "type": "array",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "synchronousRowCap",
                             "type": "int",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "administratorVisible",
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "portalVisible",
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "identifier",
+                "identifier": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 },
-                {
-                    "name": "toArray",
+                "toArray": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "fromArray",
+                "fromArray": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -704,103 +792,110 @@
                             "type": "array",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "Kumwe\\Reporting\\Domain\\ReportDefinition"
                 },
-                {
-                    "name": "checksum",
+                "checksum": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "string"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "parameters",
+            },
+            "properties": {
+                "parameters": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "filters",
+                "filters": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "columns",
+                "columns": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "groups",
+                "groups": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "aggregates",
+                "aggregates": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "formulas",
+                "formulas": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "sorts",
+                "sorts": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "drillDowns",
+                "drillDowns": {
+                    "static": false,
                     "type": "array",
                     "readonly": true
                 },
-                {
-                    "name": "version",
+                "version": {
+                    "static": false,
                     "type": "int",
                     "readonly": true
                 },
-                {
-                    "name": "title",
+                "title": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "sourceDefinition",
+                "sourceDefinition": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "requiredCapability",
+                "requiredCapability": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "synchronousRowCap",
+                "synchronousRowCap": {
+                    "static": false,
                     "type": "int",
                     "readonly": true
                 },
-                {
-                    "name": "administratorVisible",
+                "administratorVisible": {
+                    "static": false,
                     "type": "bool",
                     "readonly": true
                 },
-                {
-                    "name": "portalVisible",
+                "portalVisible": {
+                    "static": false,
                     "type": "bool",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportDefinitionGuard",
+        "Kumwe\\Reporting\\Domain\\ReportDefinitionGuard": {
+            "stability": "stable",
+            "file": "src/Domain/ReportDefinitionGuard.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "handle",
+            "methods": {
+                "handle": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -808,20 +903,20 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "label",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "void"
                 },
-                {
-                    "name": "identifier",
+                "identifier": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -829,20 +924,20 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "label",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "void"
                 },
-                {
-                    "name": "path",
+                "path": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -850,28 +945,35 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "label",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "void"
                 }
-            ],
-            "properties": [],
-            "constants": []
+            },
+            "properties": {},
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportDrillDownDefinition",
+        "Kumwe\\Reporting\\Domain\\ReportDrillDownDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ReportDrillDownDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -879,51 +981,58 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "definitionIdentifier",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "viewIdentifier",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 }
-            ],
-            "properties": [
-                {
-                    "name": "recordAlias",
+            },
+            "properties": {
+                "recordAlias": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "definitionIdentifier",
+                "definitionIdentifier": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "viewIdentifier",
+                "viewIdentifier": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportFilterDefinition",
+        "Kumwe\\Reporting\\Domain\\ReportFilterDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ReportFilterDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -931,75 +1040,85 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "operator",
                             "type": "Kumwe\\Reporting\\Domain\\ReportFilterOperator",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "parameter",
                             "type": "?string",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "quantifier",
                             "type": "Kumwe\\Reporting\\Domain\\ReportRelationQuantifier",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 }
-            ],
-            "properties": [
-                {
-                    "name": "fieldPath",
+            },
+            "properties": {
+                "fieldPath": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "operator",
+                "operator": {
+                    "static": false,
                     "type": "Kumwe\\Reporting\\Domain\\ReportFilterOperator",
                     "readonly": true
                 },
-                {
-                    "name": "parameter",
+                "parameter": {
+                    "static": false,
                     "type": "?string",
                     "readonly": true
                 },
-                {
-                    "name": "quantifier",
+                "quantifier": {
+                    "static": false,
                     "type": "Kumwe\\Reporting\\Domain\\ReportRelationQuantifier",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportFilterOperator",
+        "Kumwe\\Reporting\\Domain\\ReportFilterOperator": {
+            "stability": "stable",
+            "file": "src/Domain/ReportFilterOperator.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "deprecated": null,
             "kind": "enum",
-            "methods": [
-                {
-                    "name": "isNullTest",
+            "methods": {
+                "isNullTest": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [],
                     "return": "bool"
                 },
-                {
-                    "name": "cases",
+                "cases": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "from",
+                "from": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1007,13 +1126,13 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "static"
                 },
-                {
-                    "name": "tryFrom",
+                "tryFrom": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1021,46 +1140,79 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "Equal",
-                "NotEqual",
-                "LessThan",
-                "LessThanOrEqual",
-                "GreaterThan",
-                "GreaterThanOrEqual",
-                "Contains",
-                "StartsWith",
-                "EndsWith",
-                "In",
-                "NotIn",
-                "IsNull",
-                "IsNotNull"
-            ]
+            },
+            "constants": {
+                "Equal": {
+                    "type": null
+                },
+                "NotEqual": {
+                    "type": null
+                },
+                "LessThan": {
+                    "type": null
+                },
+                "LessThanOrEqual": {
+                    "type": null
+                },
+                "GreaterThan": {
+                    "type": null
+                },
+                "GreaterThanOrEqual": {
+                    "type": null
+                },
+                "Contains": {
+                    "type": null
+                },
+                "StartsWith": {
+                    "type": null
+                },
+                "EndsWith": {
+                    "type": null
+                },
+                "In": {
+                    "type": null
+                },
+                "NotIn": {
+                    "type": null
+                },
+                "IsNull": {
+                    "type": null
+                },
+                "IsNotNull": {
+                    "type": null
+                }
+            }
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportFormulaDefinition",
+        "Kumwe\\Reporting\\Domain\\ReportFormulaDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ReportFormulaDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -1068,63 +1220,70 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "label",
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "type",
                             "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "expression",
                             "type": "Kumwe\\BusinessDefinition\\Domain\\Expression",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 }
-            ],
-            "properties": [
-                {
-                    "name": "alias",
+            },
+            "properties": {
+                "alias": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "label",
+                "label": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "type",
+                "type": {
+                    "static": false,
                     "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
                     "readonly": true
                 },
-                {
-                    "name": "expression",
+                "expression": {
+                    "static": false,
                     "type": "Kumwe\\BusinessDefinition\\Domain\\Expression",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportGroupDefinition",
+        "Kumwe\\Reporting\\Domain\\ReportGroupDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ReportGroupDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -1132,27 +1291,34 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 }
-            ],
-            "properties": [
-                {
-                    "name": "columnAlias",
+            },
+            "properties": {
+                "columnAlias": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportParameterDefinition",
+        "Kumwe\\Reporting\\Domain\\ReportParameterDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ReportParameterDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -1160,41 +1326,41 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "type",
                             "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "required",
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "multiple",
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "defaultValue",
                             "type": "mixed",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 },
-                {
-                    "name": "assertValue",
+                "assertValue": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -1202,53 +1368,63 @@
                             "type": "mixed",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "mixed"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "defaultValue": {
+                    "static": false,
+                    "type": "mixed",
+                    "readonly": true
+                },
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "type",
+                "type": {
+                    "static": false,
                     "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
                     "readonly": true
                 },
-                {
-                    "name": "required",
+                "required": {
+                    "static": false,
                     "type": "bool",
                     "readonly": true
                 },
-                {
-                    "name": "multiple",
+                "multiple": {
+                    "static": false,
                     "type": "bool",
-                    "readonly": true
-                },
-                {
-                    "name": "defaultValue",
-                    "type": "mixed",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportRelationQuantifier",
+        "Kumwe\\Reporting\\Domain\\ReportRelationQuantifier": {
+            "stability": "stable",
+            "file": "src/Domain/ReportRelationQuantifier.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "deprecated": null,
             "kind": "enum",
-            "methods": [
-                {
-                    "name": "cases",
+            "methods": {
+                "cases": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "from",
+                "from": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1256,13 +1432,13 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "static"
                 },
-                {
-                    "name": "tryFrom",
+                "tryFrom": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1270,36 +1446,49 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "Any",
-                "None",
-                "All"
-            ]
+            },
+            "constants": {
+                "Any": {
+                    "type": null
+                },
+                "None": {
+                    "type": null
+                },
+                "All": {
+                    "type": null
+                }
+            }
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportSortDefinition",
+        "Kumwe\\Reporting\\Domain\\ReportSortDefinition": {
+            "stability": "stable",
+            "file": "src/Domain/ReportSortDefinition.php",
+            "abstract": false,
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "deprecated": null,
             "kind": "class",
-            "methods": [
-                {
-                    "name": "__construct",
+            "methods": {
+                "__construct": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -1307,57 +1496,67 @@
                             "type": "string",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "direction",
                             "type": "Kumwe\\Reporting\\Domain\\ReportSortDirection",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         },
                         {
                             "name": "nullsLast",
                             "type": "bool",
                             "optional": true,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": ""
                 }
-            ],
-            "properties": [
-                {
-                    "name": "outputAlias",
+            },
+            "properties": {
+                "outputAlias": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "direction",
+                "direction": {
+                    "static": false,
                     "type": "Kumwe\\Reporting\\Domain\\ReportSortDirection",
                     "readonly": true
                 },
-                {
-                    "name": "nullsLast",
+                "nullsLast": {
+                    "static": false,
                     "type": "bool",
                     "readonly": true
                 }
-            ],
-            "constants": []
+            },
+            "constants": {}
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportSortDirection",
+        "Kumwe\\Reporting\\Domain\\ReportSortDirection": {
+            "stability": "stable",
+            "file": "src/Domain/ReportSortDirection.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "deprecated": null,
             "kind": "enum",
-            "methods": [
-                {
-                    "name": "cases",
+            "methods": {
+                "cases": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "from",
+                "from": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1365,13 +1564,13 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "static"
                 },
-                {
-                    "name": "tryFrom",
+                "tryFrom": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1379,35 +1578,49 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "Ascending",
-                "Descending"
-            ]
+            },
+            "constants": {
+                "Ascending": {
+                    "type": null
+                },
+                "Descending": {
+                    "type": null
+                }
+            }
         },
-        {
-            "name": "Kumwe\\Reporting\\Domain\\ReportValueType",
+        "Kumwe\\Reporting\\Domain\\ReportValueType": {
+            "stability": "stable",
+            "file": "src/Domain/ReportValueType.php",
+            "abstract": false,
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "deprecated": null,
             "kind": "enum",
-            "methods": [
-                {
-                    "name": "accepts",
+            "methods": {
+                "accepts": {
+                    "visibility": "public",
                     "static": false,
                     "parameters": [
                         {
@@ -1415,19 +1628,19 @@
                             "type": "mixed",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "bool"
                 },
-                {
-                    "name": "cases",
+                "cases": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [],
                     "return": "array"
                 },
-                {
-                    "name": "from",
+                "from": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1435,13 +1648,13 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "static"
                 },
-                {
-                    "name": "tryFrom",
+                "tryFrom": {
+                    "visibility": "public",
                     "static": true,
                     "parameters": [
                         {
@@ -1449,35 +1662,59 @@
                             "type": "string|int",
                             "optional": false,
                             "variadic": false,
-                            "reference": false
+                            "by_reference": false
                         }
                     ],
                     "return": "?static"
                 }
-            ],
-            "properties": [
-                {
-                    "name": "name",
+            },
+            "properties": {
+                "name": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 },
-                {
-                    "name": "value",
+                "value": {
+                    "static": false,
                     "type": "string",
                     "readonly": true
                 }
-            ],
-            "constants": [
-                "Boolean",
-                "Integer",
-                "Decimal",
-                "String",
-                "Identifier",
-                "Date",
-                "DateTime",
-                "ConvertedMoney",
-                "ConvertedQuantity"
-            ]
+            },
+            "constants": {
+                "Boolean": {
+                    "type": null
+                },
+                "Integer": {
+                    "type": null
+                },
+                "Decimal": {
+                    "type": null
+                },
+                "String": {
+                    "type": null
+                },
+                "Identifier": {
+                    "type": null
+                },
+                "Date": {
+                    "type": null
+                },
+                "DateTime": {
+                    "type": null
+                },
+                "ConvertedMoney": {
+                    "type": null
+                },
+                "ConvertedQuantity": {
+                    "type": null
+                }
+            }
         }
-    ]
+    },
+    "extension_points": [
+        "Kumwe\\Reporting\\Contract\\ProjectionBuilder",
+        "Kumwe\\Reporting\\Contract\\ProjectionEvent",
+        "Kumwe\\Reporting\\Contract\\ProjectionWriter"
+    ],
+    "digest_of": "src"
 }
