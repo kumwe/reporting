@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Kumwe\Reporting\Domain;
 
+use Kumwe\Reporting\Internal\ValueSnapshot;
 use InvalidArgumentException;
 use Kumwe\Reporting\Domain\ReportDefinitionGuard;
 use Kumwe\Reporting\Domain\ReportValueType;
@@ -15,6 +16,9 @@ use Kumwe\Reporting\Domain\ReportValueType;
  */
 final readonly class ReportParameterDefinition
 {
+    /** @var mixed Independent admitted default value. */
+    public mixed $defaultValue;
+
     /**
      * Declare one parameter and validate its optional default immediately.
      *
@@ -33,7 +37,7 @@ final readonly class ReportParameterDefinition
         public ReportValueType $type,
         public bool $required = false,
         public bool $multiple = false,
-        public mixed $defaultValue = null,
+        mixed $defaultValue = null,
     ) {
         ReportDefinitionGuard::handle($name, 'parameter');
         if ($required && $defaultValue !== null) {
@@ -42,6 +46,7 @@ final readonly class ReportParameterDefinition
         if ($defaultValue !== null) {
             $this->assertValue($defaultValue);
         }
+        $this->defaultValue = ValueSnapshot::copy($defaultValue);
     }
 
     /**

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Kumwe\Reporting\Domain;
 
+use Kumwe\Reporting\Internal\ValueSnapshot;
 use InvalidArgumentException;
 use Kumwe\BusinessDefinition\Domain\CanonicalDefinitionJson;
 use Kumwe\BusinessDefinition\Domain\Expression;
@@ -237,14 +238,14 @@ final readonly class ReportDefinition implements ContributionDefinition
             }
             $relation = $candidate;
         }
-        $this->parameters = array_values($parameters);
-        $this->filters = array_values($filters);
-        $this->columns = array_values($columns);
-        $this->groups = array_values($groups);
-        $this->aggregates = array_values($aggregates);
-        $this->formulas = array_values($formulas);
-        $this->sorts = array_values($sorts);
-        $this->drillDowns = array_values($drillDowns);
+        $this->parameters = ValueSnapshot::copy(array_values($parameters));
+        $this->filters = ValueSnapshot::copy(array_values($filters));
+        $this->columns = ValueSnapshot::copy(array_values($columns));
+        $this->groups = ValueSnapshot::copy(array_values($groups));
+        $this->aggregates = ValueSnapshot::copy(array_values($aggregates));
+        $this->formulas = ValueSnapshot::copy(array_values($formulas));
+        $this->sorts = ValueSnapshot::copy(array_values($sorts));
+        $this->drillDowns = ValueSnapshot::copy(array_values($drillDowns));
     }
 
     /**
