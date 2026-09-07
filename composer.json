@@ -98,6 +98,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/kumwe/canonical-json.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/kumwe/access-control.git"
     }
   ],
   "minimum-stability": "dev",
