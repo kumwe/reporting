@@ -8,12 +8,12 @@
     "php": "^8.5",
     "php-64bit": "*",
     "ext-json": "*",
-    "kumwe/business-definition": "dev-agent/candidate-sequence-dependency-v2",
+    "kumwe/business-definition": "dev-main",
     "kumwe/contribution": "0.1.0",
-    "kumwe/integration": "dev-agent/extract-integration-v2",
+    "kumwe/integration": "dev-main || dev-agent/merged-dependency-coordinates-v2",
     "kumwe/access-context": "0.1.0",
     "kumwe/conversion": "0.1.0",
-    "kumwe/access-control": "dev-agent/access-membership-di-completion",
+    "kumwe/access-control": "dev-main",
     "ext-mbstring": "*"
   },
   "require-dev": {

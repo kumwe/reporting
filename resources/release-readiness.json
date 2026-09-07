@@ -3,7 +3,7 @@
   "reason": "Source candidate checks do not establish immutable dependency release verification.",
   "dependencies": {
     "kumwe/business-definition": {
-      "version": "dev-agent/candidate-sequence-dependency-v2",
+      "version": "dev-main",
       "attestation": null
     },
     "kumwe/contribution": {
@@ -11,7 +11,7 @@
       "attestation": null
     },
     "kumwe/integration": {
-      "version": "dev-agent/extract-integration-v2",
+      "version": "dev-main || dev-agent/merged-dependency-coordinates-v2",
       "attestation": null
     },
     "kumwe/access-context": {
@@ -23,7 +23,7 @@
       "attestation": null
     },
     "kumwe/access-control": {
-      "version": "dev-agent/access-membership-di-completion",
+      "version": "dev-main",
       "attestation": null
     }
   }

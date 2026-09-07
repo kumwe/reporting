@@ -54,7 +54,7 @@ This candidate contains runtime implementation and package-owned tests. Publicat
     "examined_dependencies": [
       {
         "package": "kumwe/business-definition",
-        "constraint": "dev-agent/candidate-sequence-dependency-v2",
+        "constraint": "dev-main",
         "independently_verified": false,
         "attestation": null
       },
@@ -66,7 +66,7 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       },
       {
         "package": "kumwe/integration",
-        "constraint": "dev-agent/extract-integration-v2",
+        "constraint": "dev-main || dev-agent/merged-dependency-coordinates-v2",
         "independently_verified": false,
         "attestation": null
       },
@@ -84,7 +84,7 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       },
       {
         "package": "kumwe/access-control",
-        "constraint": "dev-agent/access-membership-di-completion",
+        "constraint": "dev-main",
         "independently_verified": false,
         "attestation": null
       }
