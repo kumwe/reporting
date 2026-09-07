@@ -2,6 +2,8 @@
 
 ## 0.1.1 - 2026-09-07
 
+- Ship consumer-readable v2 manifests and YAML handoff with package-local governance drift checks and refreshed App consumer inventory.
+
 - Detach report and projection collections and default parameters from caller references so validated output fields and checksums remain immutable. Resolve published dependency releases from Packagist without obsolete root VCS overrides.
 - Add package-owned regression tests and refresh extraction handoff, dependency and release documentation.
 - Keep exact stable dependency requirements; grouped weekly update PRs re-run the package gate.

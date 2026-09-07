@@ -1,16 +1,47 @@
 {
-    "schema": "kumwe-capabilities/v1",
+    "schema": "kumwe-package-capabilities/v1",
     "package": "kumwe/reporting",
+    "release": "0.1.1",
+    "namespace": "Kumwe\\Reporting\\",
+    "responsibility": "Bounded report and projection definitions with neutral projection contracts.",
+    "non_responsibilities": [
+        "Database execution, persistence, transactions and App orchestration.",
+        "Authorization and tenant authority remain host supplied."
+    ],
     "capabilities": [
         {
             "id": "reporting.portable-semantics",
-            "responsibility": "Bounded report and projection definitions with neutral projection contracts.",
-            "implementation_owner": "kumwe/reporting",
+            "title": "Reporting portable semantics",
+            "description": "Bounded report and projection definitions with neutral projection contracts.",
+            "symbols": [
+                "Kumwe\\Reporting\\Contract\\ProjectionBuilder",
+                "Kumwe\\Reporting\\Contract\\ProjectionEvent",
+                "Kumwe\\Reporting\\Contract\\ProjectionWriter",
+                "Kumwe\\Reporting\\Domain\\ProjectionDefinition",
+                "Kumwe\\Reporting\\Domain\\ProjectionFieldDefinition",
+                "Kumwe\\Reporting\\Domain\\ProjectionSourceDefinition",
+                "Kumwe\\Reporting\\Domain\\ReportAggregateDefinition",
+                "Kumwe\\Reporting\\Domain\\ReportAggregateFunction",
+                "Kumwe\\Reporting\\Domain\\ReportColumnDefinition",
+                "Kumwe\\Reporting\\Domain\\ReportDefinition",
+                "Kumwe\\Reporting\\Domain\\ReportDefinitionGuard",
+                "Kumwe\\Reporting\\Domain\\ReportDrillDownDefinition",
+                "Kumwe\\Reporting\\Domain\\ReportFilterDefinition",
+                "Kumwe\\Reporting\\Domain\\ReportFilterOperator",
+                "Kumwe\\Reporting\\Domain\\ReportFormulaDefinition",
+                "Kumwe\\Reporting\\Domain\\ReportGroupDefinition",
+                "Kumwe\\Reporting\\Domain\\ReportParameterDefinition",
+                "Kumwe\\Reporting\\Domain\\ReportRelationQuantifier",
+                "Kumwe\\Reporting\\Domain\\ReportSortDefinition",
+                "Kumwe\\Reporting\\Domain\\ReportSortDirection",
+                "Kumwe\\Reporting\\Domain\\ReportValueType"
+            ],
             "documentation": [
                 "docs/public-api.md",
                 "docs/architecture.md"
             ]
         }
     ],
-    "release_verified": false
+    "native_requirements": null,
+    "deprecations": []
 }

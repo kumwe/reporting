@@ -45,6 +45,7 @@
       "@analyse",
       "@cs",
       "@manifests",
+      "@governance",
       "@security:audit",
       "@release:check",
       "@clean-consumer"
@@ -61,11 +62,14 @@
       "bash tools/test-configure-release-repositories.sh",
       "bash tools/test-release-dependencies.sh",
       "bash tools/test-package-dependencies.sh"
-    ]
+    ],
+    "governance": "php tools/verify-governance.php"
   },
   "config": {
     "sort-packages": true,
-    "github-protocols": ["https"]
+    "github-protocols": [
+      "https"
+    ]
   },
   "archive": {
     "exclude": [
