@@ -8,7 +8,21 @@
         "testManifestRoundTripAndChecksumAreDeterministic",
         "testManifestRejectsUnknownKeysAndMoreThanOneRelationship"
       ],
-      "implementation_owner": "kumwe/reporting"
+      "implementation_owner": "kumwe/reporting",
+      "source_ownership": "moved_or_adapted",
+      "source_tests": [
+        {
+          "owner": "app",
+          "baseline_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+          "path": "tests/Unit/BusinessReporting/ReportDefinitionTest.php",
+          "methods": [
+            "testManifestRoundTripAndChecksumAreDeterministic",
+            "testManifestRejectsUnknownKeysAndMoreThanOneRelationship"
+          ],
+          "retained_methods": [],
+          "remove_whole_file": true
+        }
+      ]
     },
     {
       "path": "tests/ReportingBoundaryTest.php",
@@ -25,7 +39,9 @@
         "testFormulaCannotRequestAnUndisclosedField",
         "testFrozenNativePlansPreserveEveryCanonicalField"
       ],
-      "implementation_owner": "kumwe/reporting"
+      "implementation_owner": "kumwe/reporting",
+      "source_ownership": "new_package_tests",
+      "source_tests": []
     }
   ],
   "app_retains": [

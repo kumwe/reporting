@@ -131,7 +131,7 @@ This candidate contains runtime implementation and package-owned tests. Publicat
     "public_manifests": [
       {
         "path": "resources/public-api/v1.json",
-        "sha256": "faa1884c2b86c0a2ef4b03362867e79cf80e4b36980d3456e738a96e2434027a"
+        "sha256": "f04b0f6d478bde3f2538cfa8dbcc133c55631959e790988436a157c5e837f992"
       },
       {
         "path": "resources/capabilities/v1.json",
@@ -143,7 +143,7 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       },
       {
         "path": "resources/test-ownership/v1.json",
-        "sha256": "e8b01f43682937c98512e0908e3336555832a258fa30ba1442b0a0ad0f5361cd"
+        "sha256": "83b109d4991a5c289e2c6cf9abbc3916032cb2441f2f1b4bf592ba5463caf517"
       }
     ],
     "intentionally_excluded": [
@@ -161,107 +161,128 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportAggregateDefinition.php",
-        "target_path": "src/Domain/ReportAggregateDefinition.php"
+        "target_path": "src/Domain/ReportAggregateDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportAggregateFunction.php",
-        "target_path": "src/Domain/ReportAggregateFunction.php"
+        "target_path": "src/Domain/ReportAggregateFunction.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportColumnDefinition.php",
-        "target_path": "src/Domain/ReportColumnDefinition.php"
+        "target_path": "src/Domain/ReportColumnDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportDefinition.php",
-        "target_path": "src/Domain/ReportDefinition.php"
+        "target_path": "src/Domain/ReportDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportDrillDownDefinition.php",
-        "target_path": "src/Domain/ReportDrillDownDefinition.php"
+        "target_path": "src/Domain/ReportDrillDownDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportFilterDefinition.php",
-        "target_path": "src/Domain/ReportFilterDefinition.php"
+        "target_path": "src/Domain/ReportFilterDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportFilterOperator.php",
-        "target_path": "src/Domain/ReportFilterOperator.php"
+        "target_path": "src/Domain/ReportFilterOperator.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportFormulaDefinition.php",
-        "target_path": "src/Domain/ReportFormulaDefinition.php"
+        "target_path": "src/Domain/ReportFormulaDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportGroupDefinition.php",
-        "target_path": "src/Domain/ReportGroupDefinition.php"
+        "target_path": "src/Domain/ReportGroupDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportParameterDefinition.php",
-        "target_path": "src/Domain/ReportParameterDefinition.php"
+        "target_path": "src/Domain/ReportParameterDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportRelationQuantifier.php",
-        "target_path": "src/Domain/ReportRelationQuantifier.php"
+        "target_path": "src/Domain/ReportRelationQuantifier.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportSortDefinition.php",
-        "target_path": "src/Domain/ReportSortDefinition.php"
+        "target_path": "src/Domain/ReportSortDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportSortDirection.php",
-        "target_path": "src/Domain/ReportSortDirection.php"
+        "target_path": "src/Domain/ReportSortDirection.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Domain/ProjectionDefinition.php",
-        "target_path": "src/Domain/ProjectionDefinition.php"
+        "target_path": "src/Domain/ProjectionDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Domain/ProjectionFieldDefinition.php",
-        "target_path": "src/Domain/ProjectionFieldDefinition.php"
+        "target_path": "src/Domain/ProjectionFieldDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Domain/ProjectionSourceDefinition.php",
-        "target_path": "src/Domain/ProjectionSourceDefinition.php"
+        "target_path": "src/Domain/ProjectionSourceDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Domain/ReportDefinitionGuard.php",
-        "target_path": "src/Domain/ReportDefinitionGuard.php"
+        "target_path": "src/Domain/ReportDefinitionGuard.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Domain/ReportValueType.php",
-        "target_path": "src/Domain/ReportValueType.php"
+        "target_path": "src/Domain/ReportValueType.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Application/ProjectionBuilder.php",
-        "target_path": "src/Contract/ProjectionBuilder.php"
+        "target_path": "src/Contract/ProjectionBuilder.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Application/ProjectionEvent.php",
-        "target_path": "src/Contract/ProjectionEvent.php"
+        "target_path": "src/Contract/ProjectionEvent.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Application/ProjectionWriter.php",
-        "target_path": "src/Contract/ProjectionWriter.php"
+        "target_path": "src/Contract/ProjectionWriter.php",
+        "extraction_kind": "whole_file"
       }
     ],
     "consumers": {
@@ -317,7 +338,21 @@ This candidate contains runtime implementation and package-owned tests. Publicat
           "testManifestRoundTripAndChecksumAreDeterministic",
           "testManifestRejectsUnknownKeysAndMoreThanOneRelationship"
         ],
-        "implementation_owner": "kumwe/reporting"
+        "implementation_owner": "kumwe/reporting",
+        "source_ownership": "moved_or_adapted",
+        "source_tests": [
+          {
+            "owner": "app",
+            "baseline_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+            "path": "tests/Unit/BusinessReporting/ReportDefinitionTest.php",
+            "methods": [
+              "testManifestRoundTripAndChecksumAreDeterministic",
+              "testManifestRejectsUnknownKeysAndMoreThanOneRelationship"
+            ],
+            "retained_methods": [],
+            "remove_whole_file": true
+          }
+        ]
       },
       {
         "path": "tests/ReportingBoundaryTest.php",
@@ -334,7 +369,9 @@ This candidate contains runtime implementation and package-owned tests. Publicat
           "testFormulaCannotRequestAnUndisclosedField",
           "testFrozenNativePlansPreserveEveryCanonicalField"
         ],
-        "implementation_owner": "kumwe/reporting"
+        "implementation_owner": "kumwe/reporting",
+        "source_ownership": "new_package_tests",
+        "source_tests": []
       }
     ],
     "remain_in_app_or_consumer": [
@@ -392,107 +429,128 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportAggregateDefinition.php",
-        "target_path": "src/Domain/ReportAggregateDefinition.php"
+        "target_path": "src/Domain/ReportAggregateDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportAggregateFunction.php",
-        "target_path": "src/Domain/ReportAggregateFunction.php"
+        "target_path": "src/Domain/ReportAggregateFunction.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportColumnDefinition.php",
-        "target_path": "src/Domain/ReportColumnDefinition.php"
+        "target_path": "src/Domain/ReportColumnDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportDefinition.php",
-        "target_path": "src/Domain/ReportDefinition.php"
+        "target_path": "src/Domain/ReportDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportDrillDownDefinition.php",
-        "target_path": "src/Domain/ReportDrillDownDefinition.php"
+        "target_path": "src/Domain/ReportDrillDownDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportFilterDefinition.php",
-        "target_path": "src/Domain/ReportFilterDefinition.php"
+        "target_path": "src/Domain/ReportFilterDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportFilterOperator.php",
-        "target_path": "src/Domain/ReportFilterOperator.php"
+        "target_path": "src/Domain/ReportFilterOperator.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportFormulaDefinition.php",
-        "target_path": "src/Domain/ReportFormulaDefinition.php"
+        "target_path": "src/Domain/ReportFormulaDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportGroupDefinition.php",
-        "target_path": "src/Domain/ReportGroupDefinition.php"
+        "target_path": "src/Domain/ReportGroupDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportParameterDefinition.php",
-        "target_path": "src/Domain/ReportParameterDefinition.php"
+        "target_path": "src/Domain/ReportParameterDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportRelationQuantifier.php",
-        "target_path": "src/Domain/ReportRelationQuantifier.php"
+        "target_path": "src/Domain/ReportRelationQuantifier.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportSortDefinition.php",
-        "target_path": "src/Domain/ReportSortDefinition.php"
+        "target_path": "src/Domain/ReportSortDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "app",
         "source_path": "src/BusinessReporting/Domain/ReportSortDirection.php",
-        "target_path": "src/Domain/ReportSortDirection.php"
+        "target_path": "src/Domain/ReportSortDirection.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Domain/ProjectionDefinition.php",
-        "target_path": "src/Domain/ProjectionDefinition.php"
+        "target_path": "src/Domain/ProjectionDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Domain/ProjectionFieldDefinition.php",
-        "target_path": "src/Domain/ProjectionFieldDefinition.php"
+        "target_path": "src/Domain/ProjectionFieldDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Domain/ProjectionSourceDefinition.php",
-        "target_path": "src/Domain/ProjectionSourceDefinition.php"
+        "target_path": "src/Domain/ProjectionSourceDefinition.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Domain/ReportDefinitionGuard.php",
-        "target_path": "src/Domain/ReportDefinitionGuard.php"
+        "target_path": "src/Domain/ReportDefinitionGuard.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Domain/ReportValueType.php",
-        "target_path": "src/Domain/ReportValueType.php"
+        "target_path": "src/Domain/ReportValueType.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Application/ProjectionBuilder.php",
-        "target_path": "src/Contract/ProjectionBuilder.php"
+        "target_path": "src/Contract/ProjectionBuilder.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Application/ProjectionEvent.php",
-        "target_path": "src/Contract/ProjectionEvent.php"
+        "target_path": "src/Contract/ProjectionEvent.php",
+        "extraction_kind": "whole_file"
       },
       {
         "old_owner": "extension-sdk",
         "source_path": "src/Spi/BusinessReporting/Application/ProjectionWriter.php",
-        "target_path": "src/Contract/ProjectionWriter.php"
+        "target_path": "src/Contract/ProjectionWriter.php",
+        "extraction_kind": "whole_file"
       }
     ],
     "files_to_update": [
@@ -527,8 +585,17 @@ This candidate contains runtime implementation and package-owned tests. Publicat
       "src/Spi/BusinessReporting/Application/ProjectionWriter.php"
     ],
     "tests_to_remove": [
-      "tests/ReportDefinitionTest.php",
-      "tests/ReportingBoundaryTest.php"
+      {
+        "owner": "app",
+        "baseline_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "path": "tests/Unit/BusinessReporting/ReportDefinitionTest.php",
+        "methods": [
+          "testManifestRoundTripAndChecksumAreDeterministic",
+          "testManifestRejectsUnknownKeysAndMoreThanOneRelationship"
+        ],
+        "retained_methods": [],
+        "remove_whole_file": true
+      }
     ],
     "tests_to_retain_or_add": [
       "Host responsibility cases listed above",
