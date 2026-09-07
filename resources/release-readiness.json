@@ -11,7 +11,7 @@
       "attestation": null
     },
     "kumwe/integration": {
-      "version": "dev-main || dev-agent/merged-dependency-coordinates-v2",
+      "version": "dev-main || dev-fix/published-canonical-dependency",
       "attestation": null
     },
     "kumwe/access-context": {

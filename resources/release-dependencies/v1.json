@@ -17,7 +17,7 @@
     },
     {
       "package": "kumwe/integration",
-      "constraint": "dev-main || dev-agent/merged-dependency-coordinates-v2",
+      "constraint": "dev-main || dev-fix/published-canonical-dependency",
       "independently_verified": false,
       "attestation": null
     },
