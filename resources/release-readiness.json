@@ -1,6 +1,6 @@
 {
   "status": "blocked",
-  "reason": "Source candidate awaiting stable Integration and Access Control dependency releases and a package release record. Business Definition now uses published 0.1.0; independent attestations remain optional separate evidence.",
+  "reason": "Source candidate awaiting the actual Integration stable release and a package release record. Business Definition and Access Control use published 0.1.0; independent attestations remain optional separate evidence.",
   "dependencies": {
     "kumwe/business-definition": {
       "version": "0.1.0",
@@ -23,7 +23,7 @@
       "attestation": null
     },
     "kumwe/access-control": {
-      "version": "dev-main",
+      "version": "0.1.0",
       "attestation": null
     }
   }

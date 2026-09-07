@@ -13,7 +13,7 @@
     "kumwe/integration": "dev-main || dev-fix/published-canonical-dependency",
     "kumwe/access-context": "0.1.0",
     "kumwe/conversion": "0.1.0",
-    "kumwe/access-control": "dev-main",
+    "kumwe/access-control": "0.1.0",
     "ext-mbstring": "*"
   },
   "require-dev": {
@@ -98,10 +98,6 @@
     {
       "type": "vcs",
       "url": "https://github.com/kumwe/canonical-json.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/kumwe/access-control.git"
     }
   ],
   "minimum-stability": "dev",
