@@ -388,7 +388,8 @@ This candidate contains runtime implementation and package-owned tests. Publicat
     ],
     "corpora": [
       "resources/conformance/report-materialization-v1.json"
-    ]
+    ],
+    "conformance_index": "resources/conformance/v1.json"
   },
   "documentation": {
     "charter": "CHARTER.md",
