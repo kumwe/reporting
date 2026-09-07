@@ -13,7 +13,7 @@
     "kumwe/integration": "dev-agent/extract-integration-v2",
     "kumwe/access-context": "0.1.0",
     "kumwe/conversion": "0.1.0",
-    "kumwe/access-control": "0.1.0",
+    "kumwe/access-control": "dev-agent/access-membership-di-completion",
     "ext-mbstring": "*"
   },
   "require-dev": {
@@ -95,6 +95,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/kumwe/sequence.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/kumwe/access-control.git"
     }
   ],
   "minimum-stability": "dev",
