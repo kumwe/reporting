@@ -13,6 +13,9 @@ use InvalidArgumentException;
  */
 final readonly class ProjectionSourceDefinition
 {
+    /** @var list<int> Canonical positive schema versions accepted by this event source. */
+    public array $schemaVersions;
+
     /**
      * Declare one event type and the exact schema versions its builder understands.
      *
@@ -23,24 +26,27 @@ final readonly class ProjectionSourceDefinition
      *
      * @since   0.2.0
      */
-    public function __construct(public string $eventType, public array $schemaVersions)
+    public function __construct(public string $eventType, array $schemaVersions)
     {
         ReportDefinitionGuard::identifier($eventType, 'projection event type');
         if ($schemaVersions === [] || count($schemaVersions) > 16 || !array_is_list($schemaVersions)) {
             throw new InvalidArgumentException('A projection source needs one to sixteen schema versions.');
         }
+        $versions = [];
         foreach ($schemaVersions as $version) {
             if (!is_int($version) || $version < 1) {
                 throw new InvalidArgumentException('A projection source schema version is invalid.');
             }
+            $versions[] = $version;
         }
-        if (count(array_unique($schemaVersions)) !== count($schemaVersions)) {
+        if (count(array_unique($versions)) !== count($schemaVersions)) {
             throw new InvalidArgumentException('A projection source schema version is duplicated.');
         }
-        $canonical = $schemaVersions;
+        $canonical = $versions;
         sort($canonical, SORT_NUMERIC);
         if ($schemaVersions !== $canonical) {
             throw new InvalidArgumentException('Projection source schema versions must be sorted.');
         }
+        $this->schemaVersions = $versions;
     }
 }
