@@ -1,0 +1,38 @@
+{
+  "schema": "kumwe-test-ownership/v1",
+  "package": "kumwe/reporting",
+  "tests": [
+    {
+      "path": "tests/ReportDefinitionTest.php",
+      "methods": [
+        "testManifestRoundTripAndChecksumAreDeterministic",
+        "testManifestRejectsUnknownKeysAndMoreThanOneRelationship"
+      ],
+      "implementation_owner": "kumwe/reporting"
+    },
+    {
+      "path": "tests/ReportingBoundaryTest.php",
+      "methods": [
+        "testProjectionRoundTripBindsBuilderSourcesAndSensitivity",
+        "testProjectionRejectsUnknownDocumentKeys",
+        "testProjectionKeyMustReferToDeclaredField",
+        "testProjectionRefusesUnsortedSourceVersions",
+        "testProjectionSourceRejectsUnknownRuntimeType",
+        "testRequiredParametersDoNotAcceptDefaults",
+        "testParametersRetainExactDecimalStringsAndRejectFloats",
+        "testParameterListCannotExceedOneHundredValues",
+        "testNumericAggregateRejectsTextColumn",
+        "testFormulaCannotRequestAnUndisclosedField",
+        "testFrozenNativePlansPreserveEveryCanonicalField"
+      ],
+      "implementation_owner": "kumwe/reporting"
+    }
+  ],
+  "app_retains": [
+    "authorization and generation pinning",
+    "policy-before-query and SQL",
+    "persistence and transaction atomicity",
+    "delivery, export and operational recovery"
+  ],
+  "remove_duplicates_only_after_verified_adoption": true
+}
