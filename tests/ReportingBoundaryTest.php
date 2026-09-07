@@ -7,14 +7,43 @@ namespace Kumwe\Reporting\Tests;
 use InvalidArgumentException;
 use Kumwe\BusinessDefinition\Domain\Expression;
 use Kumwe\Integration\EventSensitivity;
-use Kumwe\Reporting\Domain\{ProjectionDefinition,ProjectionFieldDefinition,ProjectionSourceDefinition,ReportAggregateDefinition,ReportAggregateFunction,ReportColumnDefinition,ReportDefinition,ReportFormulaDefinition,ReportParameterDefinition,ReportValueType};
+use Kumwe\Reporting\Domain\{ProjectionDefinition,
+    ProjectionFieldDefinition,
+    ProjectionSourceDefinition,
+    ReportAggregateDefinition,
+    ReportAggregateFunction,
+    ReportColumnDefinition,
+    ReportDefinition,
+    ReportFormulaDefinition,
+    ReportParameterDefinition,
+    ReportValueType};
 use PHPUnit\Framework\TestCase;
 
 final class ReportingBoundaryTest extends TestCase
 {
     private function projection(): ProjectionDefinition
     {
-        return new ProjectionDefinition('acme.totals', 1, 'builder-1', EventSensitivity::INTERNAL, [new ProjectionSourceDefinition('acme.record.changed', [1,2])], [new ProjectionFieldDefinition('record', ReportValueType::Identifier),new ProjectionFieldDefinition('amount', ReportValueType::Decimal, true)], ['record']);
+        return new ProjectionDefinition(
+            'acme.totals',
+            1,
+            'builder-1',
+            EventSensitivity::INTERNAL,
+            [new ProjectionSourceDefinition(
+                'acme.record.changed',
+                [1,
+                2]
+            )],
+            [new ProjectionFieldDefinition(
+                'record',
+                ReportValueType::Identifier
+            ),
+            new ProjectionFieldDefinition(
+                'amount',
+                ReportValueType::Decimal,
+                true
+            )],
+            ['record']
+        );
     }
     public function testProjectionRoundTripBindsBuilderSourcesAndSensitivity(): void
     {
@@ -46,7 +75,18 @@ final class ReportingBoundaryTest extends TestCase
     public function testProjectionSourceRejectsUnknownRuntimeType(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        new ProjectionDefinition('acme.report', 1, 'v1', EventSensitivity::INTERNAL, [new \stdClass()], [new ProjectionFieldDefinition('id', ReportValueType::Identifier)], ['id']);
+        new ProjectionDefinition(
+            'acme.report',
+            1,
+            'v1',
+            EventSensitivity::INTERNAL,
+            [new \stdClass()],
+            [new ProjectionFieldDefinition(
+                'id',
+                ReportValueType::Identifier
+            )],
+            ['id']
+        );
     }
     public function testRequiredParametersDoNotAcceptDefaults(): void
     {
@@ -70,17 +110,64 @@ final class ReportingBoundaryTest extends TestCase
     public function testNumericAggregateRejectsTextColumn(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        new ReportDefinition('acme.report', 1, 'Report', 'acme.record', 'acme.report.read', [], [], [new ReportColumnDefinition('name', 'Name', 'name', ReportValueType::String)], [], [new ReportAggregateDefinition('total', ReportAggregateFunction::Sum, 'name')]);
+        new ReportDefinition(
+            'acme.report',
+            1,
+            'Report',
+            'acme.record',
+            'acme.report.read',
+            [],
+            [],
+            [new ReportColumnDefinition(
+                'name',
+                'Name',
+                'name',
+                ReportValueType::String
+            )],
+            [],
+            [new ReportAggregateDefinition(
+                'total',
+                ReportAggregateFunction::Sum,
+                'name'
+            )]
+        );
     }
     public function testFormulaCannotRequestAnUndisclosedField(): void
     {
         $expression = Expression::fromArray(['op' => 'field','type' => 'decimal','field' => 'secret']);
         $this->expectException(InvalidArgumentException::class);
-        new ReportDefinition('acme.report', 1, 'Report', 'acme.record', 'acme.report.read', [], [], [new ReportColumnDefinition('amount', 'Amount', 'amount', ReportValueType::Decimal)], [], [], [new ReportFormulaDefinition('total', 'Total', ReportValueType::Decimal, $expression)]);
+        new ReportDefinition(
+            'acme.report',
+            1,
+            'Report',
+            'acme.record',
+            'acme.report.read',
+            [],
+            [],
+            [new ReportColumnDefinition(
+                'amount',
+                'Amount',
+                'amount',
+                ReportValueType::Decimal
+            )],
+            [],
+            [],
+            [new ReportFormulaDefinition(
+                'total',
+                'Total',
+                ReportValueType::Decimal,
+                $expression
+            )]
+        );
     }
     public function testFrozenNativePlansPreserveEveryCanonicalField(): void
     {
-        $corpus = json_decode(file_get_contents(dirname(__DIR__) . '/resources/conformance/report-materialization-v1.json'), true, 512, JSON_THROW_ON_ERROR);
+        $corpus = json_decode(
+            file_get_contents(dirname(__DIR__) . '/resources/conformance/report-materialization-v1.json'),
+            true,
+            512,
+            JSON_THROW_ON_ERROR
+        );
         foreach ($corpus['fixtures'] as $fixture) {
             $report = ReportDefinition::fromArray($fixture['plan']);
             self::assertSame($fixture['plan'], $report->toArray(), $fixture['id']);
