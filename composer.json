@@ -10,7 +10,7 @@
     "ext-json": "*",
     "kumwe/business-definition": "0.1.0",
     "kumwe/contribution": "0.1.0",
-    "kumwe/integration": "dev-main || dev-fix/published-canonical-dependency",
+    "kumwe/integration": "0.1.0",
     "kumwe/access-context": "0.1.0",
     "kumwe/conversion": "0.1.0",
     "kumwe/access-control": "0.1.0",
@@ -104,6 +104,6 @@
       "url": "https://github.com/kumwe/access-control.git"
     }
   ],
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true
 }

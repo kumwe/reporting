@@ -1,12 +1,13 @@
 # Changelog
 
-## Unreleased
+## 0.1.0 - 2026-09-07
 
-- Use published Business Definition 0.1.0 and Access Control 0.1.0 in the source candidate graph.
+- Use published Business Definition 0.1.0, Access Control 0.1.0 and Integration 0.1.0 with stable Composer resolution.
 
 ### Added
 
 - Bounded report and projection definitions with neutral projection contracts.
 - NRM-2026-033: package extraction enabling the Version 2 migration. Roadmap impact: enables; no completion claim.
 
-Publication awaits a release record and exact stable upstream dependency versions. Independent attestations remain optional.
+Normal publication verifies exact stable dependency tag, source and dist identity.
+Independent attestations remain optional separate verification evidence.

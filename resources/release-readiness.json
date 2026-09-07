@@ -1,6 +1,6 @@
 {
-  "status": "blocked",
-  "reason": "Source candidate awaiting the actual Integration stable release and a package release record. Business Definition and Access Control use published 0.1.0; independent attestations remain optional separate evidence.",
+  "status": "ready",
+  "reason": "All direct Kumwe dependencies use published exact stable versions; publication verifies their tag, source and installed dist identity.",
   "dependencies": {
     "kumwe/business-definition": {
       "version": "0.1.0",
@@ -11,7 +11,7 @@
       "attestation": null
     },
     "kumwe/integration": {
-      "version": "dev-main || dev-fix/published-canonical-dependency",
+      "version": "0.1.0",
       "attestation": null
     },
     "kumwe/access-context": {
@@ -26,5 +26,6 @@
       "version": "0.1.0",
       "attestation": null
     }
-  }
+  },
+  "required_followup": "Independent attestations remain optional evidence for later verification and adoption; they do not block normal package publication."
 }
