@@ -1,0 +1,1483 @@
+{
+    "schema": "kumwe-public-api/v1",
+    "package": "kumwe/reporting",
+    "release": null,
+    "namespace": "Kumwe\\Reporting\\",
+    "symbols": [
+        {
+            "name": "Kumwe\\Reporting\\Contract\\ProjectionBuilder",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "apply",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "definition",
+                            "type": "Kumwe\\Reporting\\Domain\\ProjectionDefinition",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Reporting\\Contract\\ProjectionEvent",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "writer",
+                            "type": "Kumwe\\Reporting\\Contract\\ProjectionWriter",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Contract\\ProjectionEvent",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "sequence",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "id",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "type",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "schemaVersion",
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                {
+                    "name": "occurredAt",
+                    "static": false,
+                    "parameters": [],
+                    "return": "DateTimeImmutable"
+                },
+                {
+                    "name": "payload",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "checksum",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Contract\\ProjectionWriter",
+            "kind": "interface",
+            "methods": [
+                {
+                    "name": "put",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "values",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "remove",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ProjectionDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "version",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "handlerVersion",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sensitivityCeiling",
+                            "type": "Kumwe\\Integration\\EventSensitivity",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sources",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "fields",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "keyFields",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "rebuildBatchSize",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "identifier",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "accepts",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schemaVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "fromArray",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "document",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Reporting\\Domain\\ProjectionDefinition"
+                },
+                {
+                    "name": "checksum",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "sources",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "fields",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "keyFields",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "version",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "handlerVersion",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "sensitivityCeiling",
+                    "type": "Kumwe\\Integration\\EventSensitivity",
+                    "readonly": true
+                },
+                {
+                    "name": "rebuildBatchSize",
+                    "type": "int",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ProjectionFieldDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "type",
+                            "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "nullable",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "type",
+                    "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
+                    "readonly": true
+                },
+                {
+                    "name": "nullable",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ProjectionSourceDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schemaVersions",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "eventType",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "schemaVersions",
+                    "type": "array",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportAggregateDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "alias",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "function",
+                            "type": "Kumwe\\Reporting\\Domain\\ReportAggregateFunction",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "columnAlias",
+                            "type": "?string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "alias",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "function",
+                    "type": "Kumwe\\Reporting\\Domain\\ReportAggregateFunction",
+                    "readonly": true
+                },
+                {
+                    "name": "columnAlias",
+                    "type": "?string",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportAggregateFunction",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Count",
+                "Sum",
+                "Minimum",
+                "Maximum",
+                "Average"
+            ]
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportColumnDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "alias",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sourcePath",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "type",
+                            "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "alias",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "sourcePath",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "type",
+                    "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "version",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "title",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sourceDefinition",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "requiredCapability",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "parameters",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "filters",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "columns",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "groups",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "aggregates",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "formulas",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sorts",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "drillDowns",
+                            "type": "array",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "synchronousRowCap",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "administratorVisible",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "portalVisible",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "identifier",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                {
+                    "name": "toArray",
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "fromArray",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "document",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Reporting\\Domain\\ReportDefinition"
+                },
+                {
+                    "name": "checksum",
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "parameters",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "filters",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "columns",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "groups",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "aggregates",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "formulas",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "sorts",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "drillDowns",
+                    "type": "array",
+                    "readonly": true
+                },
+                {
+                    "name": "version",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "sourceDefinition",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "requiredCapability",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "synchronousRowCap",
+                    "type": "int",
+                    "readonly": true
+                },
+                {
+                    "name": "administratorVisible",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "portalVisible",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportDefinitionGuard",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "handle",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "identifier",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                {
+                    "name": "path",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            ],
+            "properties": [],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportDrillDownDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "recordAlias",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "definitionIdentifier",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "viewIdentifier",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "recordAlias",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "definitionIdentifier",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "viewIdentifier",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportFilterDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "fieldPath",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "operator",
+                            "type": "Kumwe\\Reporting\\Domain\\ReportFilterOperator",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "parameter",
+                            "type": "?string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "quantifier",
+                            "type": "Kumwe\\Reporting\\Domain\\ReportRelationQuantifier",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "fieldPath",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "operator",
+                    "type": "Kumwe\\Reporting\\Domain\\ReportFilterOperator",
+                    "readonly": true
+                },
+                {
+                    "name": "parameter",
+                    "type": "?string",
+                    "readonly": true
+                },
+                {
+                    "name": "quantifier",
+                    "type": "Kumwe\\Reporting\\Domain\\ReportRelationQuantifier",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportFilterOperator",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "isNullTest",
+                    "static": false,
+                    "parameters": [],
+                    "return": "bool"
+                },
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Equal",
+                "NotEqual",
+                "LessThan",
+                "LessThanOrEqual",
+                "GreaterThan",
+                "GreaterThanOrEqual",
+                "Contains",
+                "StartsWith",
+                "EndsWith",
+                "In",
+                "NotIn",
+                "IsNull",
+                "IsNotNull"
+            ]
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportFormulaDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "alias",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "type",
+                            "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "expression",
+                            "type": "Kumwe\\BusinessDefinition\\Domain\\Expression",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "alias",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "label",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "type",
+                    "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
+                    "readonly": true
+                },
+                {
+                    "name": "expression",
+                    "type": "Kumwe\\BusinessDefinition\\Domain\\Expression",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportGroupDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "columnAlias",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "columnAlias",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportParameterDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "type",
+                            "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "required",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "multiple",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "defaultValue",
+                            "type": "mixed",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                {
+                    "name": "assertValue",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "mixed",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "mixed"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "type",
+                    "type": "Kumwe\\Reporting\\Domain\\ReportValueType",
+                    "readonly": true
+                },
+                {
+                    "name": "required",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "multiple",
+                    "type": "bool",
+                    "readonly": true
+                },
+                {
+                    "name": "defaultValue",
+                    "type": "mixed",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportRelationQuantifier",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Any",
+                "None",
+                "All"
+            ]
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportSortDefinition",
+            "kind": "class",
+            "methods": [
+                {
+                    "name": "__construct",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "outputAlias",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "direction",
+                            "type": "Kumwe\\Reporting\\Domain\\ReportSortDirection",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "nullsLast",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            ],
+            "properties": [
+                {
+                    "name": "outputAlias",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "direction",
+                    "type": "Kumwe\\Reporting\\Domain\\ReportSortDirection",
+                    "readonly": true
+                },
+                {
+                    "name": "nullsLast",
+                    "type": "bool",
+                    "readonly": true
+                }
+            ],
+            "constants": []
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportSortDirection",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Ascending",
+                "Descending"
+            ]
+        },
+        {
+            "name": "Kumwe\\Reporting\\Domain\\ReportValueType",
+            "kind": "enum",
+            "methods": [
+                {
+                    "name": "accepts",
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "mixed",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                {
+                    "name": "cases",
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                {
+                    "name": "from",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                {
+                    "name": "tryFrom",
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            ],
+            "properties": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "readonly": true
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "readonly": true
+                }
+            ],
+            "constants": [
+                "Boolean",
+                "Integer",
+                "Decimal",
+                "String",
+                "Identifier",
+                "Date",
+                "DateTime",
+                "ConvertedMoney",
+                "ConvertedQuantity"
+            ]
+        }
+    ]
+}

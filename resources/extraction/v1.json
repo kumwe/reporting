@@ -1,0 +1,116 @@
+{
+  "schema": "kumwe-extraction/v1",
+  "package": "kumwe/reporting",
+  "source_baselines": {
+    "app": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "sdk": "e8ec23f155c5836c6bd083f154a8efb6e50aec66"
+  },
+  "symbols": [
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportAggregateDefinition.php",
+      "target": "src/Domain/ReportAggregateDefinition.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportAggregateFunction.php",
+      "target": "src/Domain/ReportAggregateFunction.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportColumnDefinition.php",
+      "target": "src/Domain/ReportColumnDefinition.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportDefinition.php",
+      "target": "src/Domain/ReportDefinition.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportDrillDownDefinition.php",
+      "target": "src/Domain/ReportDrillDownDefinition.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportFilterDefinition.php",
+      "target": "src/Domain/ReportFilterDefinition.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportFilterOperator.php",
+      "target": "src/Domain/ReportFilterOperator.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportFormulaDefinition.php",
+      "target": "src/Domain/ReportFormulaDefinition.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportGroupDefinition.php",
+      "target": "src/Domain/ReportGroupDefinition.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportParameterDefinition.php",
+      "target": "src/Domain/ReportParameterDefinition.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportRelationQuantifier.php",
+      "target": "src/Domain/ReportRelationQuantifier.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportSortDefinition.php",
+      "target": "src/Domain/ReportSortDefinition.php"
+    },
+    {
+      "owner": "app",
+      "source": "src/BusinessReporting/Domain/ReportSortDirection.php",
+      "target": "src/Domain/ReportSortDirection.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessReporting/Domain/ProjectionDefinition.php",
+      "target": "src/Domain/ProjectionDefinition.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessReporting/Domain/ProjectionFieldDefinition.php",
+      "target": "src/Domain/ProjectionFieldDefinition.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessReporting/Domain/ProjectionSourceDefinition.php",
+      "target": "src/Domain/ProjectionSourceDefinition.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessReporting/Domain/ReportDefinitionGuard.php",
+      "target": "src/Domain/ReportDefinitionGuard.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessReporting/Domain/ReportValueType.php",
+      "target": "src/Domain/ReportValueType.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessReporting/Application/ProjectionBuilder.php",
+      "target": "src/Contract/ProjectionBuilder.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessReporting/Application/ProjectionEvent.php",
+      "target": "src/Contract/ProjectionEvent.php"
+    },
+    {
+      "owner": "extension-sdk",
+      "source": "src/Spi/BusinessReporting/Application/ProjectionWriter.php",
+      "target": "src/Contract/ProjectionWriter.php"
+    }
+  ],
+  "release_blocked": true
+}
