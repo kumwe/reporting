@@ -83,11 +83,11 @@ source:
       manifest_or_corpus: "resources/extraction/v1.json"
       sha256: "663f227573fec83641701cdac4b76010f7d5d3d4a40f2dd234073f2c0989d3d5"
   examined_dependencies:
-    - "kumwe/business-definition 0.1.0; independent release attestation not asserted"
+    - "kumwe/business-definition 0.1.1; independent release attestation not asserted"
     - "kumwe/contribution 0.1.0; independent release attestation not asserted"
     - "kumwe/integration 0.1.0; independent release attestation not asserted"
     - "kumwe/access-context 0.1.0; independent release attestation not asserted"
-    - "kumwe/conversion 0.1.0; independent release attestation not asserted"
+    - "kumwe/conversion 0.1.3; independent release attestation not asserted"
     - "kumwe/access-control 0.1.0; independent release attestation not asserted"
   active_related_pull_requests: []
 target:
@@ -122,13 +122,13 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "7e115ac1440b464685cbc3b6745ff4736c9fd35f780adaf6a07abe7009929828"
+      sha256: "463eda6506b3819370b9ee1fee245add2d0929cffa7c8105acfe106e31038e4e"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "1643c0f36e8dd64ae59b8ea46fcf7996860ac7e790424c15f9c73629bbf211a5"
+      sha256: "3d38f9f1698d28cd47790f31bed24ed11f45282016ec908146a78bccd46cee68"
     -
       path: "resources/service-map/v1.json"
-      sha256: "7585db0a32d1ef8622229b72506aa6dc75431dd1a7f1a3f7e58a6a437ff88ee3"
+      sha256: "a477752e458f677a291e29a8d4645b3c8993fa166fd9d36a72e642209351a510"
     -
       path: "resources/test-ownership/v1.json"
       sha256: "7391fd200387b75562a3dc80f3e45e0458ecc3f50199f746882646a4f9d58dac"
@@ -651,9 +651,9 @@ documentation:
   integration_or_consumer: "docs/integration.md"
   examples:
     - "examples/consumer.php"
-  changelog_record: "CHANGELOG.md / 0.1.1"
+  changelog_record: "CHANGELOG.md / 0.1.2"
 release_expectations:
-  version_policy: "SemVer maintenance release 0.1.1 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
+  version_policy: "SemVer maintenance release 0.1.2 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
   expected_artifact_types:
     - "Composer source zip"
   required_checks:
@@ -761,7 +761,7 @@ decisions:
   - "No host authority or persistence moves into the package."
   - "See CHARTER.md for explicit dependency amendments; no release approval is inferred."
 blockers:
-  - "The 0.1.1 maintenance candidate requires maintainer review and merge. Version 0.1.0 has already been published."
+  - "The 0.1.2 readiness candidate requires maintainer review and merge. Version 0.1.1 has already been published."
   - "Independent verification of the final maintenance release and its complete dependency closure remains a separate task before App adoption."
   - "Access Control 0.1.0 is published on GitHub but absent from Packagist at review time; root consumers must declare its VCS repository until registry publication."
 ---
@@ -771,7 +771,7 @@ blockers:
 ## Migration/implementation summary
 
 The published 0.1.0 package owns the portable source listed in the machine inventory.
-This 0.1.1 maintenance candidate completes immutable input snapshots, current release
+The published 0.1.1 maintenance release completes immutable input snapshots, current release
 metadata and consumer-readable governance records. App adoption is a separate phase.
 
 ## Public API and responsibility
@@ -840,3 +840,17 @@ The consumer inventory was recomputed against App 24ecf956423c18933e824b43cea1bf
 by searching tracked PHP, JSON, YAML, XML, JavaScript and TypeScript for the historical
 fully qualified symbols and their escaped string forms. Configuration and fixtures
 are listed separately; the adoption review must also resolve dynamically composed names.
+
+## Dependency readiness update — 0.1.2
+
+The 0.1.1 release is published. This candidate uses `kumwe/business-definition 0.1.1`, `kumwe/contribution 0.1.0`, `kumwe/integration 0.1.0`, `kumwe/access-context 0.1.0`, `kumwe/conversion 0.1.3`, `kumwe/access-control 0.1.0`.
+The Composer install and no-dev archive consumer resolve the complete transitive graph; the readiness
+regression gate prevents its direct dependency records from drifting again. Null attestation coordinates
+remain an explicit absence of independent verification, not a completed adoption claim.
+
+The current Integration and Access Control releases require the older Access Context train.
+Do not independently raise its context or contribution pins: publish and verify the coordinated successors
+first, then advance the entire affected tuple and rerun all package and consumer gates.
+
+Maintainer merge, final release publication and independent artifact/dependency verification remain
+required before downstream adoption. No App implementation or integration changes are included.
