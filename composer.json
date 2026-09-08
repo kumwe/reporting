@@ -12,7 +12,7 @@
     "kumwe/contribution": "0.1.0",
     "kumwe/integration": "0.1.0",
     "kumwe/access-context": "0.1.0",
-    "kumwe/conversion": "0.1.0",
+    "kumwe/conversion": "0.1.2",
     "kumwe/access-control": "0.1.0",
     "ext-mbstring": "*"
   },
