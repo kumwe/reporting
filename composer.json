@@ -10,9 +10,9 @@
     "ext-json": "*",
     "kumwe/business-definition": "0.1.2",
     "kumwe/contribution": "0.1.1",
-    "kumwe/integration": "0.2.1",
+    "kumwe/integration": "0.2.2",
     "kumwe/access-context": "0.1.2",
-    "kumwe/conversion": "0.1.4",
+    "kumwe/conversion": "0.1.5",
     "kumwe/access-control": "0.1.2",
     "ext-mbstring": "*"
   },
@@ -39,6 +39,7 @@
     "manifests": "php tools/manifests.php",
     "check": [
       "composer validate --strict",
+      "@schemas",
       "@dependencies:check",
       "@lint",
       "@architecture",
@@ -68,7 +69,8 @@
     "dependencies:check": [
       "bash tools/check-dependency-readiness.sh",
       "bash tools/test-dependency-readiness.sh"
-    ]
+    ],
+    "schemas": "node tools/schema-validator/verify.cjs"
   },
   "config": {
     "sort-packages": true,
