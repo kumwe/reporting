@@ -7,8 +7,8 @@
   cover the previous drift and non-exact pins with negative regression fixtures.
 - Refresh release manifests and handoff digests; retain package-owned behavior, boundary, conformance
   and no-dev archive-consumer checks. Independent release verification remains separate.
-- Record the coordinated Integration/Access Context successor prerequisite; this intermediate release
-  does not claim compatibility with the newest security dependency train.
+- Select the published coordinated Integration/Access Context security train. The Conversion
+  handoff successor remains a separate dependency-verification prerequisite.
 
 ## 0.1.1 - 2026-09-07
 

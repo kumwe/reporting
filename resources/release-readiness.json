@@ -3,19 +3,19 @@
   "reason": "Release 0.1.2 records a coherent exact published upstream tuple. Package CI and the no-dev archive consumer must pass before publication; independent verification remains a separate adoption gate.",
   "dependencies": {
     "kumwe/business-definition": {
-      "version": "0.1.1",
+      "version": "0.1.2",
       "attestation": null
     },
     "kumwe/contribution": {
-      "version": "0.1.0",
+      "version": "0.1.1",
       "attestation": null
     },
     "kumwe/integration": {
-      "version": "0.1.0",
+      "version": "0.2.1",
       "attestation": null
     },
     "kumwe/access-context": {
-      "version": "0.1.0",
+      "version": "0.1.2",
       "attestation": null
     },
     "kumwe/conversion": {
@@ -23,10 +23,10 @@
       "attestation": null
     },
     "kumwe/access-control": {
-      "version": "0.1.0",
+      "version": "0.1.2",
       "attestation": null
     }
   },
-  "required_followup": "Publish and verify coordinated Access Control and Integration successors using Access Context 0.1.2, then advance all affected exact pins together and rerun the package and clean-consumer gates.",
-  "integration_status": "blocked-on-coordinated-integration-successor"
+  "required_followup": "Select Conversion 0.1.4 after its v2-handoff successor is published, then rerun the complete source and clean-consumer gates. Independent final artifact and dependency verification remain separate.",
+  "integration_status": "awaiting-conversion-handoff-successor"
 }
