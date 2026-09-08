@@ -95,7 +95,7 @@ target:
   artifact_identity: "kumwe/reporting"
   canonical_namespace_or_abi: "Kumwe\\Reporting\\"
   branch: "fix/final-governed-dependencies"
-  pull_request: "https://github.com/kumwe/reporting/pull/8"
+  pull_request: "https://github.com/kumwe/reporting/pull/9"
 ownership:
   responsibility: "Bounded report and projection definitions with neutral projection contracts."
   non_responsibilities:
