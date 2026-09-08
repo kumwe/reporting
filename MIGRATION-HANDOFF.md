@@ -85,16 +85,16 @@ source:
   examined_dependencies:
     - "kumwe/business-definition 0.1.2; independent release attestation not asserted"
     - "kumwe/contribution 0.1.1; independent release attestation not asserted"
-    - "kumwe/integration 0.2.1; independent release attestation not asserted"
+    - "kumwe/integration 0.2.2; independent release attestation not asserted"
     - "kumwe/access-context 0.1.2; independent release attestation not asserted"
-    - "kumwe/conversion 0.1.4; independent release attestation not asserted"
+    - "kumwe/conversion 0.1.5; independent release attestation not asserted"
     - "kumwe/access-control 0.1.2; independent release attestation not asserted"
   active_related_pull_requests: []
 target:
   repository: "https://github.com/kumwe/reporting"
   artifact_identity: "kumwe/reporting"
   canonical_namespace_or_abi: "Kumwe\\Reporting\\"
-  branch: "fix/integration-readiness"
+  branch: "fix/final-governed-dependencies"
   pull_request: "https://github.com/kumwe/reporting/pull/8"
 ownership:
   responsibility: "Bounded report and projection definitions with neutral projection contracts."
@@ -122,13 +122,13 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "463eda6506b3819370b9ee1fee245add2d0929cffa7c8105acfe106e31038e4e"
+      sha256: "a14a790c2beea8e8619638247cb9fa2e617bdbe072f7de1dac8fdadbb59d3e4b"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "3d38f9f1698d28cd47790f31bed24ed11f45282016ec908146a78bccd46cee68"
+      sha256: "6860bc73ae12a00e503aa1dd106c79822deb0a9eff98f5ee889bc15ac3e00f09"
     -
       path: "resources/service-map/v1.json"
-      sha256: "a477752e458f677a291e29a8d4645b3c8993fa166fd9d36a72e642209351a510"
+      sha256: "7eab401833f8eb4629c13e9bd3771a54ed32a5dd5921ceaafe62470b6cef82e8"
     -
       path: "resources/test-ownership/v1.json"
       sha256: "a4b2715552a2fb26706f1af8c2d85a6f3f9ca7e96073b4f9803fa06196c8070c"
@@ -628,6 +628,7 @@ native_cpp: null
 php_extension: null
 tests:
   moved_or_added:
+    - "tools/schema-validator/verify.cjs: complete canonical manifest and handoff schemas with 12 rejection fixtures"
     - "tests/ProjectionContractTest.php (testForeignImplementationsPreserveEventMetadataAndTypedWrites, testReplayingTheSameOrderedEventsProducesTheSameOperations, testImmutableEventPayloadIsStableAcrossCallerArrayChanges, testConsumerBuilderUsesTheDeclaredSourceTypeAndVersion, testWriterFailurePropagatesWithoutTranslationOrRetry); provenance: resources/test-ownership/v1.json"
     - "tests/ReportDefinitionTest.php (testManifestRoundTripAndChecksumAreDeterministic, testManifestRejectsUnknownKeysAndMoreThanOneRelationship); provenance: resources/test-ownership/v1.json"
     - "tests/ReportingBoundaryTest.php (testProjectionRoundTripBindsBuilderSourcesAndSensitivity, testProjectionRejectsUnknownDocumentKeys, testProjectionKeyMustReferToDeclaredField, testProjectionRefusesUnsortedSourceVersions, testProjectionSourceRejectsUnknownRuntimeType, testRequiredParametersDoNotAcceptDefaults, testParametersRetainExactDecimalStringsAndRejectFloats, testParameterListCannotExceedOneHundredValues, testNumericAggregateRejectsTextColumn, testFormulaCannotRequestAnUndisclosedField, testFrozenNativePlansPreserveEveryCanonicalField); provenance: resources/test-ownership/v1.json"
@@ -652,9 +653,9 @@ documentation:
   integration_or_consumer: "docs/integration.md"
   examples:
     - "examples/consumer.php"
-  changelog_record: "CHANGELOG.md / 0.1.2"
+  changelog_record: "CHANGELOG.md / 0.1.3"
 release_expectations:
-  version_policy: "SemVer maintenance release 0.1.2 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
+  version_policy: "SemVer maintenance release 0.1.3 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption."
   expected_artifact_types:
     - "Composer source zip"
   required_checks:
@@ -762,7 +763,7 @@ decisions:
   - "No host authority or persistence moves into the package."
   - "See CHARTER.md for explicit dependency amendments; no release approval is inferred."
 blockers:
-  - "The 0.1.2 readiness candidate requires maintainer review and merge. Version 0.1.1 has already been published."
+  - "The 0.1.3 schema/dependency successor requires maintainer review and merge. Version 0.1.2 is already published."
   - "Independent verification of the final maintenance release and its complete dependency closure remains a separate task before App adoption."
   - "Access Control 0.1.0 is published on GitHub but absent from Packagist at review time; root consumers must declare its VCS repository until registry publication."
 ---
@@ -844,7 +845,7 @@ are listed separately; the adoption review must also resolve dynamically compose
 
 ## Dependency readiness update — 0.1.2
 
-The 0.1.1 release is published. This candidate uses `kumwe/business-definition 0.1.2`, `kumwe/contribution 0.1.1`, `kumwe/integration 0.2.1`, `kumwe/access-context 0.1.2`, `kumwe/conversion 0.1.4`, `kumwe/access-control 0.1.2`.
+The 0.1.1 release is published. This candidate uses `kumwe/business-definition 0.1.2`, `kumwe/contribution 0.1.1`, `kumwe/integration 0.2.2`, `kumwe/access-context 0.1.2`, `kumwe/conversion 0.1.5`, `kumwe/access-control 0.1.2`.
 The Composer install and no-dev archive consumer resolve the complete transitive graph; the readiness
 regression gate prevents its direct dependency records from drifting again. Null attestation coordinates
 remain an explicit absence of independent verification, not a completed adoption claim.
@@ -856,4 +857,6 @@ must publish before advancing its exact pin for the v2-handoff dependency closur
 Maintainer merge, final release publication and independent artifact/dependency verification remain
 required before downstream adoption. No App implementation or integration changes are included.
 
-Final coordinated dependency tuple: `kumwe/business-definition 0.1.2`, `kumwe/contribution 0.1.1`, `kumwe/integration 0.2.1`, `kumwe/access-context 0.1.2`, `kumwe/conversion 0.1.4`, `kumwe/access-control 0.1.2`. These versions were observed published before pinning. Full source/archive gates and independent final-release verification remain required; App/core integration is a separate later task.
+Final coordinated dependency tuple: `kumwe/business-definition 0.1.2`, `kumwe/contribution 0.1.1`, `kumwe/integration 0.2.2`, `kumwe/access-context 0.1.2`, `kumwe/conversion 0.1.5`, `kumwe/access-control 0.1.2`. These versions were observed published before pinning. Full source/archive gates and independent final-release verification remain required; App/core integration is a separate later task.
+
+The 0.1.3 successor selects the published schema-valid dependency tuple: `kumwe/business-definition 0.1.2`, `kumwe/contribution 0.1.1`, `kumwe/integration 0.2.2`, `kumwe/access-context 0.1.2`, `kumwe/conversion 0.1.5`, `kumwe/access-control 0.1.2`. All complete authoritative schemas and twelve refusal cases are mandatory source/release checks. Earlier releases remain unchanged. Runtime/API behavior is preserved, and App/core integration remains a separate later step.
