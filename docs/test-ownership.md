@@ -1,3 +1,5 @@
 # Test ownership
 
 The exact discovered test methods are recorded in `resources/test-ownership/v1.json`. App retains authorization, SQL/database, cryptography, transactions, generation fences, delivery and recovery tests. The coordinated SDK/App successor removes the listed implementation tests only after immutable release verification. Candidate source tests do not claim composed App acceptance.
+
+`ProjectionContractTest` exercises all three exported projection ports using test-only consumer implementations. It checks every event getter, immutable scalar/array payload snapshots, exact boolean/integer/string keys and nullable scalar rows, deterministic ordered replay, declared event type/version selection, and unchanged writer failures without retries. These fixtures demonstrate the neutral builder/event/writer boundary and contain no host runtime. Their particular folding policy is illustrative; the tests make no claim about database atomicity, idempotency, authorization or recovery. The ownership manifest records the five test methods, including the two writer-failure data sets.
