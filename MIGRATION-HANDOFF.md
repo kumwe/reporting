@@ -83,12 +83,12 @@ source:
       manifest_or_corpus: "resources/extraction/v1.json"
       sha256: "663f227573fec83641701cdac4b76010f7d5d3d4a40f2dd234073f2c0989d3d5"
   examined_dependencies:
-    - "kumwe/business-definition 0.1.1; independent release attestation not asserted"
-    - "kumwe/contribution 0.1.0; independent release attestation not asserted"
-    - "kumwe/integration 0.1.0; independent release attestation not asserted"
-    - "kumwe/access-context 0.1.0; independent release attestation not asserted"
+    - "kumwe/business-definition 0.1.2; independent release attestation not asserted"
+    - "kumwe/contribution 0.1.1; independent release attestation not asserted"
+    - "kumwe/integration 0.2.1; independent release attestation not asserted"
+    - "kumwe/access-context 0.1.2; independent release attestation not asserted"
     - "kumwe/conversion 0.1.3; independent release attestation not asserted"
-    - "kumwe/access-control 0.1.0; independent release attestation not asserted"
+    - "kumwe/access-control 0.1.2; independent release attestation not asserted"
   active_related_pull_requests: []
 target:
   repository: "https://github.com/kumwe/reporting"
@@ -843,14 +843,14 @@ are listed separately; the adoption review must also resolve dynamically compose
 
 ## Dependency readiness update — 0.1.2
 
-The 0.1.1 release is published. This candidate uses `kumwe/business-definition 0.1.1`, `kumwe/contribution 0.1.0`, `kumwe/integration 0.1.0`, `kumwe/access-context 0.1.0`, `kumwe/conversion 0.1.3`, `kumwe/access-control 0.1.0`.
+The 0.1.1 release is published. This candidate uses `kumwe/business-definition 0.1.2`, `kumwe/contribution 0.1.1`, `kumwe/integration 0.2.1`, `kumwe/access-context 0.1.2`, `kumwe/conversion 0.1.3`, `kumwe/access-control 0.1.2`.
 The Composer install and no-dev archive consumer resolve the complete transitive graph; the readiness
 regression gate prevents its direct dependency records from drifting again. Null attestation coordinates
 remain an explicit absence of independent verification, not a completed adoption claim.
 
-The current Integration and Access Control releases require the older Access Context train.
-Do not independently raise its context or contribution pins: publish and verify the coordinated successors
-first, then advance the entire affected tuple and rerun all package and consumer gates.
+Published Integration 0.2.1 and Access Control 0.1.2 now select Access Context 0.1.2.
+This candidate selects that coordinated published tuple and Contribution 0.1.1. Conversion 0.1.4
+must publish before advancing its exact pin for the v2-handoff dependency closure.
 
 Maintainer merge, final release publication and independent artifact/dependency verification remain
 required before downstream adoption. No App implementation or integration changes are included.
