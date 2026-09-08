@@ -3,6 +3,19 @@
     "package": "kumwe/reporting",
     "tests": [
         {
+            "path": "tests/ProjectionContractTest.php",
+            "methods": [
+                "testForeignImplementationsPreserveEventMetadataAndTypedWrites",
+                "testReplayingTheSameOrderedEventsProducesTheSameOperations",
+                "testImmutableEventPayloadIsStableAcrossCallerArrayChanges",
+                "testConsumerBuilderUsesTheDeclaredSourceTypeAndVersion",
+                "testWriterFailurePropagatesWithoutTranslationOrRetry"
+            ],
+            "implementation_owner": "kumwe/reporting",
+            "source_ownership": "new_package_tests",
+            "source_tests": []
+        },
+        {
             "path": "tests/ReportDefinitionTest.php",
             "methods": [
                 "testManifestRoundTripAndChecksumAreDeterministic",
