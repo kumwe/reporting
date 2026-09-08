@@ -1,9 +1,9 @@
 {
   "status": "ready",
-  "reason": "All direct Kumwe dependencies use published exact stable versions; publication verifies their tag, source and installed dist identity.",
+  "reason": "Release 0.1.2 records a coherent exact published upstream tuple. Package CI and the no-dev archive consumer must pass before publication; independent verification remains a separate adoption gate.",
   "dependencies": {
     "kumwe/business-definition": {
-      "version": "0.1.0",
+      "version": "0.1.1",
       "attestation": null
     },
     "kumwe/contribution": {
@@ -19,7 +19,7 @@
       "attestation": null
     },
     "kumwe/conversion": {
-      "version": "0.1.0",
+      "version": "0.1.3",
       "attestation": null
     },
     "kumwe/access-control": {
@@ -27,5 +27,6 @@
       "attestation": null
     }
   },
-  "required_followup": "Independent attestations remain optional evidence for later verification and adoption; they do not block normal package publication."
+  "required_followup": "Publish and verify coordinated Access Control and Integration successors using Access Context 0.1.2, then advance all affected exact pins together and rerun the package and clean-consumer gates.",
+  "integration_status": "blocked-on-coordinated-integration-successor"
 }

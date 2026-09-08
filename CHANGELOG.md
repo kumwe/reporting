@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.2
+
+- Align exact dependency pins and release-readiness records with a coherent published Composer graph.
+- Fail the complete package gate on missing, extra, duplicate or stale dependency evidence coordinates;
+  cover the previous drift and non-exact pins with negative regression fixtures.
+- Refresh release manifests and handoff digests; retain package-owned behavior, boundary, conformance
+  and no-dev archive-consumer checks. Independent release verification remains separate.
+- Record the coordinated Integration/Access Context successor prerequisite; this intermediate release
+  does not claim compatibility with the newest security dependency train.
+
 ## 0.1.1 - 2026-09-07
 
 - Ship consumer-readable v2 manifests and YAML handoff with package-local governance drift checks and refreshed App consumer inventory.
