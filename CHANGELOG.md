@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.4
+
+- Select published Integration 0.2.3 and its Automation 0.2.2 dependency, resolving the incompatible exact pins that blocked Extension SDK installation.
+- Refresh release manifests and dependency evidence while preserving runtime behavior, public signatures and all source/archive quality gates.
+
 ## 0.1.3
 
 - Select the corrected published v2 governance dependency tuple and retain the previous release unchanged.

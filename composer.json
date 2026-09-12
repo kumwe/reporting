@@ -10,7 +10,7 @@
     "ext-json": "*",
     "kumwe/business-definition": "0.1.2",
     "kumwe/contribution": "0.1.1",
-    "kumwe/integration": "0.2.2",
+    "kumwe/integration": "0.2.3",
     "kumwe/access-context": "0.1.2",
     "kumwe/conversion": "0.1.5",
     "kumwe/access-control": "0.1.2",
