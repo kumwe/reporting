@@ -29,7 +29,7 @@ delivery and recovery. There is no PHP substitute for Engine arithmetic.
 
 Pre-1.0 consumers pin exact verified versions. Published releases, independent verification and Core acceptance
 remain separate observations. [Architecture](docs/architecture.md), [test ownership](docs/test-ownership.md),
-[release record](docs/release-record.md) and [security](SECURITY.md) describe the ongoing contract.
+[release record](docs/release-record.md) and [Core security policy](https://github.com/kumwe/app/blob/main/SECURITY.md) describe the ongoing contract.
 
 ## Development
 
