@@ -1,13 +1,32 @@
-# Releasing
+# Releasing Reporting
 
-The callable Package CI gate and shared release-on-record helpers are copied from
-Canonical JSON main 584f965e65a22e098e2ca6edff10047b9f9e3041. The dependency-aware
-publication workflow and verifier use the same Business Definition release gate.
-Unreleased-only changelogs do not select a version. No release is recorded here.
+The newest stable changelog heading selects the package version. An Unreleased-only changelog publishes nothing.
+Maintain exact stable Kumwe dependencies and align the canonical API, capability and service manifests with the
+recorded version. Existing tags and release assets are never moved, deleted or replaced.
 
-Before recording a stable release, select exact stable dependency versions with
-independent immutable release attestations. The live dependency verifier checks
-the complete resolved Kumwe closure and fails on development versions, mutable
-releases or missing evidence. Source CI runs its isolated regression fixtures.
-The shared helper verifies the tested default-branch identity and existing tags
-before any publication. Maintainers retain merge and publication authority.
+## Shared quality gate
+
+PRs and the default-branch release run call the same Package CI workflow. Package gate requires source/API/schema,
+architecture, static analysis, coding standards, behavior/conformance tests, security, dependency readiness and
+no-dev archive consumption, plus release automation regression tests. A failed or skipped required job blocks it.
+
+The post-rebase run tests the actual default-branch commit. Publication checks out that exact event SHA,
+resolves production dependencies and verifies selected Kumwe stable tag/source/dist identities. The release
+helper creates or verifies the recorded tag and release; an existing published ancestor is verified unchanged.
+An unfinished tag must identify the exact tested commit. Only confirmed HTTP 404 absence permits creation.
+
+## Evidence and maintenance
+
+Packagist follows repository tags. Published metadata, passing package CI, independent artifact verification and
+Core acceptance remain separate observations. Independent verification checks the published source/archive,
+canonical manifests, exact dependencies and authoritative clean consumer. The package never invents its own
+future commit, archive digest or release attestation.
+
+Normal publication does not require repository administration changes or an external attestation. Existing
+GitHub rules and permissions remain effective. Optional repository-hardening and strict dependency-evidence
+helpers are separate maintenance actions; source CI runs their regression fixtures without applying settings.
+
+Run the complete composer check gate and release-helper regression suites before review. Fix defects through
+an unused successor version when a new artifact is needed, and verify actual release/tag metadata after the
+successful default-branch publication workflow. See [release record](release-record.md) and
+[package release standard](package-release-standard.md).

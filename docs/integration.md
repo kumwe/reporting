@@ -1,6 +1,6 @@
 # Integration
 
-Consume only an independently verified immutable release; exact pins are mandatory before 1.0. App supplies already authorized values and trusted definitions. Database adapters, scope authority, policy enforcement, signing secrets, persistence and delivery remain in App. No change to historical owners happens in this Phase 1 branch.
+Consume only an independently verified immutable release; exact pins are mandatory before 1.0. App supplies already authorized values and trusted definitions. Database adapters, scope authority, policy enforcement, signing secrets, persistence and delivery remain in App. See the [Core contract](core-contract.md) for current ownership.
 
 ## Source and archive verification
 
@@ -11,4 +11,5 @@ Run `composer install` and `composer check`. Source CI installs exact published 
 
 Exact pre-1.0 dependency pins change through reviewed update PRs. A moving `latest` coordinate would make the verified dependency closure irreproducible.
 
-Access Control 0.1.0 is published on GitHub but was absent from Packagist during the 2026-09-07 review. Root consumers must retain the declared Access Control VCS repository until registry publication is complete; Composer does not inherit dependency repositories. The other dependencies resolve through Packagist.
+The exact runtime dependency graph resolves through Packagist. Custom root VCS overrides are not required.
+Dependency readiness and the clean no-dev consumer verify the declared package closure.

@@ -1,17 +1,52 @@
-# reporting
+# Kumwe Reporting
 
-Bounded report and projection definitions with neutral projection contracts.
+[![Packagist version][version-badge]][packagist]
+[![Package CI][ci-badge]][ci]
+[![PHP requirement][php-badge]](composer.json)
+[![License: Apache-2.0][license-badge]](LICENSE)
 
-Canonical namespace: `Kumwe\Reporting`. Requires PHP 8.5, 64-bit. Version 0.1.0 has been published; this branch prepares the 0.1.1 maintenance release. App integration follows independent verification of the final release and its handoff.
+Bounded report and projection definitions under `Kumwe\Reporting\`. The package owns value invariants,
+canonical declarations, neutral projection builder/event/writer contracts and their conformance tests.
+Core supplies authorized values, trusted definitions and storage; Engine owns native materialization arithmetic.
 
-Pure values and stateless normalization are constructed directly. No empty container provider is registered. Services with real collaborators receive explicit factories when introduced.
+## Installation and usage
 
-See [public API](docs/public-api.md), [architecture](docs/architecture.md), [integration](docs/integration.md) and [test ownership](docs/test-ownership.md).
+```sh
+composer require kumwe/reporting:0.1.4
+```
 
-For standalone verification, run `composer install` and `composer check`; see `docs/integration.md`. `composer clean-consumer` verifies the archive in a fresh no-dev classmap-authoritative consumer. License: Apache-2.0.
+Requires 64-bit PHP 8.5, JSON and mbstring. Exact stable Kumwe dependencies resolve from Packagist without custom
+VCS overrides. Values and stateless normalization are constructed directly; there is no ConfigProvider or
+captured global context. See the [consumer example](examples/consumer.php), [public API](docs/public-api.md),
+[Core contract](docs/core-contract.md) and [integration](docs/integration.md).
 
-Maintenance release: Detach report and projection collections and default parameters from caller references so validated output fields and checksums remain immutable. Resolve published dependency releases from Packagist without obsolete root VCS overrides.
+## Compatibility and ownership
 
-Direct Kumwe dependencies use exact stable versions. Dependabot proposes grouped weekly Composer updates; review and merge only after the complete package gate passes. The downstream App consumes a verified exact release, never an unreviewed moving `latest` constraint.
+Report/projection collections and default parameters detach caller references, preserving validated snapshots
+and checksums. Neutral projection contracts preserve ordered replay and writer failures without imposing a
+host retry policy. Core owns authorization, SQL, transactions, generation fences, signing, persistence,
+delivery and recovery. There is no PHP substitute for Engine arithmetic.
 
-Source quality checks require Node.js 20+ and `npm ci --prefix tools/schema-validator --ignore-scripts`. The pinned Ajv2020/YAML gate validates all three canonical manifests and the complete handoff against authoritative schema snapshots, with rejection regressions. These development tools are excluded from consumer archives.
+Pre-1.0 consumers pin exact verified versions. Published releases, independent verification and Core acceptance
+remain separate observations. [Architecture](docs/architecture.md), [test ownership](docs/test-ownership.md),
+[release record](docs/release-record.md) and [security](SECURITY.md) describe the ongoing contract.
+
+## Development
+
+```sh
+npm ci --prefix tools/schema-validator --ignore-scripts
+composer install
+composer check
+```
+
+Source checks require Node.js 20+ for the pinned Ajv2020/YAML schema validator. The complete gate validates
+canonical manifests and the release record, tests behavior and ownership, checks dependency identities,
+architecture, static analysis and security, and installs the actual archive in a fresh no-dev authoritative
+consumer. Development tooling is excluded from published archives. See [releasing](docs/releasing.md).
+
+[version-badge]: https://img.shields.io/packagist/v/kumwe/reporting
+[packagist]: https://packagist.org/packages/kumwe/reporting
+[ci-badge]: https://github.com/kumwe/reporting/actions/workflows/ci.yml/badge.svg?branch=main
+[ci]: https://github.com/kumwe/reporting/actions/workflows/ci.yml
+[php-badge]: https://img.shields.io/packagist/dependency-v/kumwe/reporting/php
+[license-badge]: https://img.shields.io/github/license/kumwe/reporting
