@@ -12,20 +12,20 @@ if (Number(process.versions.node.split('.')[0]) < 20) {
 }
 const ajv = new Ajv2020({ allErrors: true, strict: false });
 const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
-const parseHandoff = text => {
-  if (!text.startsWith('---\n')) throw new Error('Handoff opening front-matter boundary is missing.');
+const parseRecord = text => {
+  if (!text.startsWith('---\n')) throw new Error('Record opening front-matter boundary is missing.');
   const boundary = text.indexOf('\n---\n', 4);
-  if (boundary < 0) throw new Error('Handoff closing front-matter boundary is missing.');
+  if (boundary < 0) throw new Error('Record closing front-matter boundary is missing.');
   // Parse complete YAML front matter, rejecting duplicate keys and malformed quoting.
   return YAML.parse(text.slice(4, boundary), { uniqueKeys: true });
 };
 const documents = new Map();
-for (const kind of ['public-api', 'capabilities', 'service-map', 'handoff']) {
-  const schemaPath = 'tools/schemas/' + (kind === 'handoff'
-    ? 'migration-handoff.v2.schema.json' : 'package-' + kind + '.v1.schema.json');
+for (const kind of ['public-api', 'capabilities', 'service-map', 'record']) {
+  const schemaPath = 'tools/schemas/' + (kind === 'record'
+    ? 'package-release-record.v1.schema.json' : 'package-' + kind + '.v1.schema.json');
   const schema = JSON.parse(read(schemaPath));
   const validate = ajv.compile(schema);
-  const value = kind === 'handoff' ? parseHandoff(read('MIGRATION-HANDOFF.md'))
+  const value = kind === 'record' ? parseRecord(read('docs/release-record.md'))
     : JSON.parse(read('resources/' + kind + '/v1.json'));
   if (!validate(value)) throw new Error(kind + ': ' + ajv.errorsText(validate.errors, { separator: '\n' }));
   documents.set(kind, { value, validate });
@@ -43,10 +43,10 @@ reject('public-api', value => { delete value.symbols[Object.keys(value.symbols)[
 reject('public-api', value => { value.release = 'dev-main'; });
 reject('service-map', value => { value.factories = {}; });
 reject('service-map', value => { value.undeclared_field = true; });
-reject('handoff', value => { delete value.target; });
-reject('handoff', value => { value.source.app.baseline_commit = 'not-a-commit'; });
-reject('handoff', value => { value.artifact_kind = 'unrecognized'; });
-assert.throws(() => parseHandoff('---\n{"blockers": ["unterminated]}\n---\n'));
-assert.throws(() => parseHandoff('---\n{}\n'), /closing front-matter boundary/);
-console.log('All 3 canonical manifests and full v2 handoff satisfy authoritative Draft 2020-12 schemas.');
+reject('record', value => { delete value.target; });
+reject('record', value => { value.source.app.baseline_commit = 'not-a-commit'; });
+reject('record', value => { value.artifact_kind = 'unrecognized'; });
+assert.throws(() => parseRecord('---\n{"blockers": ["unterminated]}\n---\n'));
+assert.throws(() => parseRecord('---\n{}\n'), /closing front-matter boundary/);
+console.log('All 3 canonical manifests and full v1 release record satisfy authoritative Draft 2020-12 schemas.');
 console.log('Schema gate passed 12 malformed, missing-field, nullability and front-matter refusal fixtures.');

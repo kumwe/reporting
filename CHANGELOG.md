@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Standardize package/CI/runtime badges and current Core/release documentation.
+- Replace the extraction handoff schema with the strict package release record and preserve refusal regressions.
+- Remove the obsolete Access Control VCS override without changing any dependency versions.
+
 ## 0.1.4
 
 - Select published Integration 0.2.3 and its Automation 0.2.2 dependency, resolving the incompatible exact pins that blocked Extension SDK installation.
