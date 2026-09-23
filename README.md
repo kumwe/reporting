@@ -12,7 +12,7 @@ Core supplies authorized values, trusted definitions and storage; Engine owns na
 ## Installation and usage
 
 ```sh
-composer require kumwe/reporting:0.1.4
+composer require kumwe/reporting:0.1.5
 ```
 
 Requires 64-bit PHP 8.5, JSON and mbstring. Exact stable Kumwe dependencies resolve from Packagist without custom

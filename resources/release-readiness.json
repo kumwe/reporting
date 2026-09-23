@@ -1,6 +1,6 @@
 {
   "status": "ready",
-  "reason": "Release 0.1.4 selects published Integration 0.2.3 and its Automation 0.2.2 dependency so downstream consumers can resolve the same exact stable graph. Independent final artifact verification remains separate.",
+  "reason": "Release 0.1.5 selects published Integration 0.2.4, whose record's change set shares its ledger sequence, and its Automation 0.2.2 dependency so downstream consumers can resolve the same exact stable graph; the ledger identifiers move to the free KUMWE-MIG/CS-2026-041 pair. Independent final artifact verification remains separate.",
   "dependencies": {
     "kumwe/business-definition": {
       "version": "0.1.2",
@@ -11,7 +11,7 @@
       "attestation": null
     },
     "kumwe/integration": {
-      "version": "0.2.3",
+      "version": "0.2.4",
       "attestation": null
     },
     "kumwe/access-context": {

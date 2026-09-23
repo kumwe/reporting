@@ -1,8 +1,8 @@
 ---
 schema: kumwe-package-release-record/v1
 artifact_kind: framework_php
-migration_id: KUMWE-MIG-2026-033
-change_set: KUMWE-CS-2026-033
+migration_id: KUMWE-MIG-2026-041
+change_set: KUMWE-CS-2026-041
 source:
   app:
     repository: https://github.com/kumwe/app
@@ -83,7 +83,7 @@ source:
   examined_dependencies:
     - kumwe/business-definition 0.1.2; independent release attestation not asserted
     - kumwe/contribution 0.1.1; independent release attestation not asserted
-    - kumwe/integration 0.2.3 at 219278ccf3a7eed6bbf165c7d26431a87602951d; independent release attestation not asserted
+    - kumwe/integration 0.2.4 at 592dcc549fa5130dc7f2b09f399d94991012b826; independent release attestation not asserted
     - kumwe/access-context 0.1.2; independent release attestation not asserted
     - kumwe/conversion 0.1.5; independent release attestation not asserted
     - kumwe/access-control 0.1.2; independent release attestation not asserted
@@ -116,11 +116,11 @@ ownership:
   next_consumer: kumwe/app
   public_manifests:
     - path: resources/public-api/v1.json
-      sha256: 2386de88af076421e1a61c4ae094a86560dc2340f3373117ad155d886ac52721
+      sha256: c7ce3b63e6826835c1c6c8bfe00dd17ed8d3b60d0cb721a5ce1255f164f9c3fc
     - path: resources/capabilities/v1.json
-      sha256: 5151b6a103d3961c8200aeda37eb1e527c7efdf6bd5db1a4ec775d701dbea517
+      sha256: de12678dd0fc20fc888b7a270bdc552ba77b3d044840895d88b3018ce90d66cd
     - path: resources/service-map/v1.json
-      sha256: 4d0227d84a18e964c8e9291fb712719ea2893523e2e80f5e852a5afde97b834d
+      sha256: 1a7eb79abfc88a86e13618033bf2336378680918fe039059604b5a68712c6957
     - path: resources/test-ownership/v1.json
       sha256: a4b2715552a2fb26706f1af8c2d85a6f3f9ca7e96073b4f9803fa06196c8070c
   intentionally_excluded:
@@ -623,9 +623,9 @@ documentation:
   integration_or_consumer: docs/integration.md
   examples:
     - examples/consumer.php
-  changelog_record: CHANGELOG.md / 0.1.4
+  changelog_record: CHANGELOG.md / 0.1.5
 release_expectations:
-  version_policy: SemVer maintenance release 0.1.4 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption.
+  version_policy: SemVer maintenance release 0.1.5 after human merge. Direct Kumwe dependencies use coherent exact published stable versions. Independent final release verification precedes App adoption.
   expected_artifact_types:
     - Composer source zip
   required_checks:
