@@ -6,6 +6,11 @@
 - Replace the extraction handoff schema with the strict package release record and preserve refusal regressions.
 - Remove the obsolete Access Control VCS override without changing any dependency versions.
 
+## 0.1.5
+
+- Move the ledger identifiers from KUMWE-MIG-2026-033 / KUMWE-CS-2026-033 to KUMWE-MIG-2026-041 / KUMWE-CS-2026-041: kumwe/extension-sdk 0.3.x records the 033 pair, and the Kumwe App ledger never renumbers (D-GOV-3) and refuses a colliding identifier, so this successor record carries a free pair.
+- Select published Integration 0.2.4 (tag commit 592dcc549fa5130dc7f2b09f399d94991012b826), the successor whose change set shares its ledger record's sequence; runtime source, public API and every other dependency pin are unchanged.
+
 ## 0.1.4
 
 - Select published Integration 0.2.3 and its Automation 0.2.2 dependency, resolving the incompatible exact pins that blocked Extension SDK installation.

@@ -17,7 +17,7 @@
     },
     {
       "package": "kumwe/integration",
-      "constraint": "0.2.3",
+      "constraint": "0.2.4",
       "independently_verified": false,
       "attestation": null
     },
